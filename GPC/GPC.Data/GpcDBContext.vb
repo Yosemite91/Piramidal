@@ -3,6 +3,7 @@ Imports System.Data.Entity
 Imports System.Data.Entity.ModelConfiguration.Conventions
 Imports System.Linq
 Imports GPC.Clases
+
 Public Class GpcDBContext
     Inherits DbContext
 
