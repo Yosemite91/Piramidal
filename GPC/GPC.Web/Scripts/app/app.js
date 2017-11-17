@@ -1,0 +1,58 @@
+/// <reference path='Utils.ts' />
+var App;
+(function (App) {
+    'use strict';
+    //MODIFICAR PARA LOGIN
+    App.appPrefix = 'EMPRENDEDORAS.';
+    App.esAdministrador = localStorage.getItem(App.appPrefix + 'login.esAdministrador');
+    App.esAdminPublicacion = localStorage.getItem(App.appPrefix + 'login.esAdminPublicacion');
+    App.runEmprendedor = localStorage.getItem(App.appPrefix + 'login.run');
+    $.ajaxSetup({
+        headers: GetAutorizationHeaders(),
+        error: function (jqXHR, textStatus, errorThrown) {
+            Utils.getErrores('', jqXHR, textStatus, errorThrown);
+        }
+    });
+    function GetAutorizationHeaders() {
+        var token = localStorage.getItem(App.appPrefix + 'login.token');
+        if (token) {
+            return { 'Authorization': 'Basic ' + token };
+        }
+        else {
+            return { 'Authorization': 'Anonymous' };
+        }
+    }
+    function goToLogin() {
+        localStorage.removeItem(App.appPrefix + 'login.esAdministrador');
+        localStorage.removeItem(App.appPrefix + 'login.esAdminPublicacion');
+        localStorage.removeItem(App.appPrefix + 'login.token');
+        localStorage.removeItem(App.appPrefix + 'login.run');
+        var urlLogin = 'http://' + window.location.host + App.apiRoot.replace('/api/', '/');
+        window.location.href = urlLogin;
+        return false;
+    }
+    App.goToLogin = goToLogin;
+    ;
+    function anioMinimo() {
+        var actual = new Date();
+        var anioMinimo = actual.getFullYear() - 18;
+        return anioMinimo;
+    }
+    App.anioMinimo = anioMinimo;
+    ;
+    function alertaFormulario(anyObj) {
+        var i;
+        var error = true;
+        for (i = 0; i < Object.keys(anyObj).length; i++) {
+            if (anyObj[Object.keys(anyObj)[i]] === null || anyObj[Object.keys(anyObj)[i]] === '' || anyObj[Object.keys(anyObj)[i]] === 0) {
+                var name_1 = Object.keys(anyObj)[i];
+                DevExpress.ui.notify('Ingrese : ' + name_1, 'error', 3000);
+                error = false;
+                return error;
+            }
+        }
+        return true;
+    }
+    App.alertaFormulario = alertaFormulario;
+})(App || (App = {}));
+//# sourceMappingURL=app.js.map

@@ -40,6 +40,9 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/devextreme")
+    @Scripts.Render("~/bundles/app")
     @RenderSection("scripts", required:=False)
 </body>
 </html>
