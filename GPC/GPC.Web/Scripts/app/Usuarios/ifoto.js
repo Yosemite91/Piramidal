@@ -1,1 +1,1 @@
-//# sourceMappingURL=ifoto.js.map
+//# sourceMappingURL=IFoto.js.map

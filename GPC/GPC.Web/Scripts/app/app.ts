@@ -5,7 +5,7 @@ namespace App {
     export var appRoot: string;
     export var apiRoot: string;
     //MODIFICAR PARA LOGIN
-    export var appPrefix: string = 'EMPRENDEDORAS.';        
+    export var appPrefix: string = 'GPC';        
     export var esAdministrador: boolean = localStorage.getItem(App.appPrefix + 'login.esAdministrador');
     export var esAdminPublicacion: boolean = localStorage.getItem(App.appPrefix + 'login.esAdminPublicacion');
     export var runEmprendedor: string  = localStorage.getItem(App.appPrefix + 'login.run');

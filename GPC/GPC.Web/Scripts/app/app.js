@@ -3,7 +3,7 @@ var App;
 (function (App) {
     'use strict';
     //MODIFICAR PARA LOGIN
-    App.appPrefix = 'EMPRENDEDORAS.';
+    App.appPrefix = 'GPC';
     App.esAdministrador = localStorage.getItem(App.appPrefix + 'login.esAdministrador');
     App.esAdminPublicacion = localStorage.getItem(App.appPrefix + 'login.esAdminPublicacion');
     App.runEmprendedor = localStorage.getItem(App.appPrefix + 'login.run');

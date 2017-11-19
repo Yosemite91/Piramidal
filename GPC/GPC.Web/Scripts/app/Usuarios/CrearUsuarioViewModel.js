@@ -2,7 +2,6 @@
 /// <reference path='../../typings/knockout/knockout.d.ts' />
 /// <reference path='../../typings/devextreme/devextreme.d.ts' />
 /// <reference path='IUsuarioModel.d.ts' />
-/// <reference path="ifoto.ts" />
 var Usuarios;
 (function (Usuarios) {
     var CrearUsuarioViewModel = (function () {

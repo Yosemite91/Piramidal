@@ -44,5 +44,71 @@
     @Scripts.Render("~/bundles/devextreme")
     @Scripts.Render("~/bundles/app")
     @RenderSection("scripts", required:=False)
+
+    @* LOGIN *@
+    <script>
+        esAdministrador = App.esAdministrador;
+        esAdminPublicacion = App.esAdminPublicacion;
+
+        App.apiRoot = '@Url.Content("~/")api/';
+        App.appRoot = '@Url.Content("~/")';
+        var Token = localStorage.getItem(App.appPrefix + 'login.token');
+
+        function Salir(){
+            App.goToLogin();
+        }
+
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+            //$('html,body').animate({ scrollTop: $(document).height() }, 1500);
+        });
+        //Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        //#to-top button appears after scrolling
+        var fixed = false;
+        $(document).scroll(function () {
+            if ($(this).scrollTop() > 250) {
+                if (!fixed) {
+                    fixed = true;
+                     //$('#to-top').css({position:'fixed', display:'block'});
+                    $('#to-top').show("slow", function () {
+                        $('#to-top').css({
+                            position: 'fixed',
+                            display: 'block'
+                        });
+                    });
+                }
+            } else {
+                if (fixed) {
+                    fixed = false;
+                    $('#to-top').hide("slow", function () {
+                        $('#to-top').css({
+                            display: 'none'
+                        });
+                    });
+                }
+            }
+        });
+        //Scrolling functions
+        $(document).ready(function () {
+            $('#to-top').click(function () {
+                $('html,body').animate({ scrollTop: 0 }, 1500);
+            });
+        });
+        //OTRO TOGGLES
+        $("#contact").click(function (e) {
+            e.preventDefault();
+            $('html,body').animate({ scrollTop: $(document).height() }, 1500);
+        });
+        $("#acercaDe").click(function (e) {
+            e.preventDefault();
+            $('html,body').animate({ scrollTop: $(document).height() }, 1500);
+        });
+    </script>
 </body>
 </html>
