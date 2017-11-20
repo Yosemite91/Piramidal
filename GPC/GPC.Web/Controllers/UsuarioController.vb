@@ -14,5 +14,9 @@ Namespace Controllers
             Return View()
         End Function
 
+        Function ListaUsuarios() As ActionResult
+            ViewData("Title") = "Lista Usuarios"
+            Return View()
+        End Function
     End Class
 End Namespace

@@ -416,6 +416,7 @@
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="Views\Usuario\CrearUsuario.vbhtml" />
     <Content Include="Views\Usuario\DetalleUsuario.vbhtml" />
+    <Content Include="Views\Usuario\ListaUsuarios.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -449,6 +450,7 @@
     <TypeScriptCompile Include="Scripts\app\Usuarios\DetalleUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\IFoto.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\IUsuarioModel.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\Usuarios\ListaUsuariosViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Utils.ts" />
     <TypeScriptCompile Include="Scripts\typings\devextreme\devextreme.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
