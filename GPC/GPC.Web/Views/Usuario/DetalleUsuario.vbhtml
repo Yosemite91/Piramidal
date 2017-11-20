@@ -23,7 +23,7 @@ End Code
             
             <div class="row">
                 <div id="bloquear-button" data-bind="dxButton: botonBloquear"> </div>
-                <div id="bloquear-button" data-bind="dxButton: botonDesbloquear"> </div>
+                <div id="desbloquear-button" data-bind="dxButton: botonDesbloquear"> </div>
                 <div id="modificar-button" data-bind="dxButton: applyButtonOptionsModificar"> </div>
             </div>
             
