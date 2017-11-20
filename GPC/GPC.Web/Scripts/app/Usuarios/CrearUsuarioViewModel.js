@@ -44,7 +44,6 @@ var Usuarios;
                         options: { text: 'OK' },
                         onClick: function (e) {
                             window.location.assign(App.appRoot + 'Usuarios/ListaUsuarios');
-                            // CORREGIR PARA CUANDO SE TENGA LA LISTA DE USUARIOS
                         }
                     }
                 ]
@@ -115,7 +114,15 @@ var Usuarios;
                 type: 'success',
                 onClick: function (e) {
                     var result = e.validationGroup.validate();
-                    var UsuarioValidacion = {};
+                    var UsuarioValidacion = {
+                        Nombre: _this.usuario().nombre,
+                        Apellido: _this.usuario().apellido,
+                        Run: _this.usuario().run,
+                        Email: _this.usuario().email,
+                        Telefono: _this.usuario().telefono,
+                        Ubicacion: _this.usuario().ubicacion,
+                        Asociado: _this.usuario().asociado
+                    };
                     if (result.isValid) {
                         _this.popUpCrearUsuario(true);
                     }
@@ -160,16 +167,6 @@ var Usuarios;
                         message: 'Campo requerido'
                     }]
             };
-            this.urlValidatorOptions = {
-                validationRules: [{
-                        type: "pattern",
-                        pattern: /(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/,
-                        message: 'Formato inválido'
-                    }, {
-                        type: 'required',
-                        message: 'Campo requerido'
-                    }]
-            };
             // FORMULARIO
             this.dxNombre = {
                 width: 'auto',
@@ -207,8 +204,7 @@ var Usuarios;
                 width: 'auto',
                 placeholder: '+56 9 1234 5678',
                 editorOptions: {
-                    mode: 'tel',
-                    value: 0
+                    mode: 'tel'
                 },
                 showClearButton: true,
                 onValueChanged: function (e) {
@@ -247,8 +243,53 @@ var Usuarios;
                     _this.usuario().fechaNacimiento = new Date(e.value);
                 }
             };
-            //Falta agregar Ubicación
-            //Falta agregar Asociado a Empresa
+            this.dxUbicacion = {
+                dataSource: [
+                    { region: "Metropolitana", numero: 0 },
+                    { region: "Tarapacá", numero: 1 },
+                    { region: "Antofagasta", numero: 2 },
+                    { region: "Atacama", numero: 3 },
+                    { region: "Coquimbo", numero: 4 },
+                    { region: "Valparaíso", numero: 5 },
+                    { region: "O'Higgins", numero: 6 },
+                    { region: "Maule", numero: 7 },
+                    { region: "Bío Bío", numero: 8 },
+                    { region: "La Araucanía", numero: 9 },
+                    { region: "Los Ríos", numero: 10 },
+                    { region: "Los Lagos", numero: 11 },
+                    { region: "Aysen", numero: 12 },
+                    { region: "Magallanes Antártica", numero: 13 },
+                    { region: "Arica y Parinacota", numero: 14 }
+                ],
+                valueExpr: "numero",
+                displayExpr: "region",
+                placeholder: "Seleccione región",
+                value: 0,
+                validationRules: [{
+                        type: 'required',
+                        message: 'Seleccione región'
+                    }],
+                onValueChanged: function (e) {
+                    _this.usuario().ubicacion = e.value;
+                }
+            };
+            this.dxAsociado = {
+                dataSource: [
+                    { empresa: "ParfumdeParfum", numero: 0 },
+                    { empresa: "JMOceanAvenue", numero: 1 }
+                ],
+                valueExpr: "numero",
+                displayExpr: "empresa",
+                placeholder: "Seleccione empresa",
+                value: 0,
+                validationRules: [{
+                        type: 'required',
+                        message: 'Seleccione empresa'
+                    }],
+                onValueChanged: function (e) {
+                    _this.usuario().asociado = e.value;
+                }
+            };
             this.dxEsAdministrador = {
                 value: false,
                 onText: 'SI',
