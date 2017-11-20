@@ -14,6 +14,7 @@ Namespace Models
         Public Property Foto As String
         Public Property FotoByte As Byte()
         Public Property Ubicacion As Integer
+        Public Property EsActivo As Boolean
         Public Property EsAdministrador As Boolean
         Public Property EsColaborador As Boolean
         Public Property Asociado As Integer

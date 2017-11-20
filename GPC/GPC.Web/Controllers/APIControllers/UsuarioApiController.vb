@@ -50,7 +50,48 @@ Namespace Controllers.APIControllers
             End Try
             Return Me.CreatedAtRoute("crearUsuario", New With {.Run = usuario.Run}, "Usuario creado exitosamente")
         End Function
-    End Class
+
 #End Region
+
+#Region "GetUsuario"
+        <Route("get/{run:regex(^[1-9][0-9]{0,7}-[0-9kK]$)}", Name:="getUsuario")>
+        <HttpGet>
+        Public Async Function GetUsuario(run As String) As Task(Of IHttpActionResult)
+            Dim db As New GpcDBContext()
+            Dim result As UsuarioModel = Nothing
+            Try
+
+                Dim user As Usuario = Await db.Usuarios.Where(Function(u) u.Run = run).SingleOrDefaultAsync()
+                result = New UsuarioModel With {
+                    .Nombre = user.Nombre,
+                    .Apellido = user.Apellido,
+                    .Run = user.Run,
+                    .Telefono = user.Telefono,
+                    .FechaNacimiento = user.FechaNacimiento,
+                    .EsActivo = user.EsActivo,
+                    .EsAdministrador = user.EsAdministrador,
+                    .EsColaborador = user.EsColaborador,
+                    .Email = user.Email,
+                    .AnioIngreso = user.AnioIngreso,
+                    .Asociado = user.Asociado,
+                    .Ubicacion = user.Ubicacion,
+                    .Foto = Encoding.Default.GetString(user.Foto)
+                }
+            Catch ex As Exception
+                Return Me.Content(HttpStatusCode.BadRequest, String.Format("Problemas para retornar usuario. Error: {0}", ex.Message))
+            Finally
+                db.Dispose()
+            End Try
+
+            If result IsNot Nothing Then Return Me.Ok(result)
+            Return Me.Content(HttpStatusCode.NotFound, "Información no encontrada")
+
+        End Function
+#End Region
+
+    End Class
+
+
+
 
 End Namespace

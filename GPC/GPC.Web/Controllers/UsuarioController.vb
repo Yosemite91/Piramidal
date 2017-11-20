@@ -4,9 +4,15 @@ Namespace Controllers
     Public Class UsuarioController
         Inherits Controller
 
-        ' Crear Usuario
+
         Function CrearUsuario() As ActionResult
             Return View()
         End Function
+
+        Function DetalleUsuario() As ActionResult
+            ViewData("Title") = "Detalle Usuario"
+            Return View()
+        End Function
+
     End Class
 End Namespace

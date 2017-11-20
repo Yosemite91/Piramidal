@@ -43,7 +43,7 @@
     @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/devextreme")
     @Scripts.Render("~/bundles/app")
-    @RenderSection("scripts", required:=False)
+    
 
     @* LOGIN *@
     <script>
@@ -110,5 +110,6 @@
             $('html,body').animate({ scrollTop: $(document).height() }, 1500);
         });
     </script>
+    @RenderSection("scripts", required:=False)
 </body>
 </html>
