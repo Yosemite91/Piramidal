@@ -23,10 +23,11 @@ Public Module BundleConfig
                   "~/Scripts/respond.js"))
 
         bundles.Add(New StyleBundle("~/Content/css").Include(
+                  "~/Content/bootstrap.css",
                   "~/Content/dx.light.css",
                   "~/Content/dx.common.css",
-                  "~/Content/bootstrap.css",
-                  "~/Content/site.css"))
+                  "~/Content/Site.css",
+                  "~/Content/vistaLista.css"))
 
         bundles.Add(New ScriptBundle("~/bundles/app").Include(
                  "~/Scripts/app/app.js",

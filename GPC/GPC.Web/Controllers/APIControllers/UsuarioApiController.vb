@@ -34,11 +34,11 @@ Namespace Controllers.APIControllers
                 usuario.Password = My.Settings.PasswordDefault
                 usuario.FechaNacimiento = model.FechaNacimiento
                 usuario.Foto = Encoding.ASCII.GetBytes(model.Foto)
-                usuario.Ubicacion = 0 'model.Ubicacion
+                usuario.Ubicacion = model.Ubicacion
                 usuario.EsActivo = True
                 usuario.EsAdministrador = model.EsAdministrador
                 usuario.EsColaborador = model.EsColaborador
-                usuario.Asociado = 0 'model.Asociado
+                usuario.Asociado = model.Asociado
                 usuario.AnioIngreso = Now
 
                 db.Usuarios.Add(usuario)
