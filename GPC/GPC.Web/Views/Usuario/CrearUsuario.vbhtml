@@ -2,11 +2,10 @@
     ViewData("Title") = "Crear Usuario"
 End Code
 
-
 <div data-bind="dxPopup: popUpCrear"></div>
 <div data-bind="dxPopup: popUpCancelar"></div>
-
 <div id="titulo" class="long-title"><h3>Crear Usuario</h3></div>
+
 <div class="container">
     <div data-bind="dxLoadPanel: { visible: loading }"></div>
     <div id="customPadding">
@@ -39,7 +38,7 @@ End Code
                 <div class="dx-field">
                     <div class="dx-field-label">Teléfono</div>
                     <div class="dx-field-value">
-                        <div data-bind="dxNumberBox: dxTelefono, dxValidator: telefonoValidatorOptions"></div>
+                        <div data-bind="dxTextBox: dxTelefono, dxValidator: telefonoValidatorOptions"></div>
                     </div>
                 </div>
 
@@ -57,7 +56,7 @@ End Code
                     </div>
                 </div>
 
-                @*<div class="dx-field">
+                <div class="dx-field">
                     <div class="dx-field-label">Ubicación</div>
                     <div class="dx-field-value">
                         <div data-bind="dxSelectBox: dxUbicacion"></div>
@@ -69,7 +68,7 @@ End Code
                     <div class="dx-field-value">
                         <div data-bind="dxSelectBox: dxAsociado"></div>
                     </div>
-                </div>*@
+                </div>
 
                 <br />
                 <div class="dx-fieldset-header">Privilegios Otorgables</div>
@@ -96,9 +95,6 @@ End Code
                     </div>
                 </div>
             </div>
-
-
-
         </div>
 
         <div class="row">
