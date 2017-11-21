@@ -43,7 +43,7 @@ var Usuarios;
                         widget: 'button',
                         options: { text: 'OK' },
                         onClick: function (e) {
-                            window.location.assign(App.appRoot + 'Usuarios/ListaUsuarios');
+                            window.history.back();
                         }
                     }
                 ]
@@ -99,7 +99,7 @@ var Usuarios;
                                 dataType: 'json'
                             }).then(function (data) {
                                 DevExpress.ui.notify('USUARIO CREADO', 'success', 3000);
-                                window.location.assign(App.appRoot + 'Usuarios/ListaUsuarios');
+                                window.location.assign(App.appRoot + 'Usuario/ListaUsuarios');
                             }, function (xhr, textStatus, err) {
                                 this.loading(false);
                                 alert(err);

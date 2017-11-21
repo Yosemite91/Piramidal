@@ -44,7 +44,7 @@ namespace Usuarios {
                 widget: 'button',
                 options: { text: 'OK' },
                 onClick: function (e: any) {
-                    window.location.assign(App.appRoot + 'Usuarios/ListaUsuarios');
+                    window.history.back();
                 }
             }
             ]
@@ -105,7 +105,7 @@ namespace Usuarios {
                     }).then(
                         function (data) {
                             DevExpress.ui.notify('USUARIO CREADO', 'success', 3000);
-                            window.location.assign(App.appRoot + 'Usuarios/ListaUsuarios');
+                            window.location.assign(App.appRoot + 'Usuario/ListaUsuarios');
                         },
                         function (xhr, textStatus, err) {
                             this.loading(false);
