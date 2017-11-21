@@ -14,5 +14,9 @@ Namespace Controllers
             Return View()
         End Function
 
+        Function EditarUsuario() As ActionResult
+            ViewData("Title") = "Editar Usuario"
+            Return View()
+        End Function
     End Class
 End Namespace
