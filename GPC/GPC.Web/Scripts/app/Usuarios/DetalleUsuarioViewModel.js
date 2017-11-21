@@ -32,7 +32,7 @@ var Usuarios;
                 type: 'default',
                 onClick: function (e) {
                     var run = this.usuario().run;
-                    window.location.assign(App.appRoot + 'Usuarios/EditarUsuario?run=' + run);
+                    window.location.assign(App.appRoot + 'Usuario/EditarUsuario?run=' + run);
                 }
             };
             this.botonBloquear = {
@@ -138,7 +138,7 @@ var Usuarios;
                                     displayFormat: 'dd/MM/yyyy',
                                     width: 'auto'
                                 }
-                            }, 'email'
+                            }, 'email', 'ubicacion', 'asociado'
                         ]
                     },
                     {

@@ -417,6 +417,7 @@
     <Content Include="Views\Usuario\CrearUsuario.vbhtml" />
     <Content Include="Views\Usuario\DetalleUsuario.vbhtml" />
     <Content Include="Views\Usuario\ListaUsuarios.vbhtml" />
+    <Content Include="Views\Usuario\EditarUsuario.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -448,6 +449,7 @@
     <TypeScriptCompile Include="Scripts\app\app.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\CrearUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\DetalleUsuarioViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\app\Usuarios\EditarUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\IFoto.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\IUsuarioModel.d.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\ListaUsuariosViewModel.ts" />

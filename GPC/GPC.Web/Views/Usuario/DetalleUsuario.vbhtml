@@ -19,7 +19,6 @@ End Code
             </div>
 
             <div id="usuario-form" data-bind="dxForm: form"></div>
-
             
             <div class="row">
                 <div id="bloquear-button" data-bind="dxButton: botonBloquear"> </div>
