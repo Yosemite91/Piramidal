@@ -53,7 +53,7 @@ var Usuarios;
                         dataType: 'json'
                     }).then(function (data) {
                         DevExpress.ui.notify('Usuario Bloqueado', 'success', 3000);
-                        window.location.assign(App.appRoot + 'Usuarios/ListaUsuarios');
+                        window.location.assign(App.appRoot + 'Usuario/ListaUsuarios');
                     }, function (xhr, textStatus, err) {
                         alert(err);
                     });
@@ -77,7 +77,7 @@ var Usuarios;
                         dataType: 'json'
                     }).then(function (data) {
                         DevExpress.ui.notify('Usuario Desbloqueado', 'success', 3000);
-                        window.location.assign(App.appRoot + 'Usuarios/ListaUsuarios');
+                        window.location.assign(App.appRoot + 'Usuario/ListaUsuarios');
                     }, function (xhr, textStatus, err) {
                         alert(err);
                     });
@@ -102,7 +102,7 @@ var Usuarios;
                         dataType: 'json'
                     }).then(function (data) {
                         DevExpress.ui.notify('Contraseña Restablecida', 'success', 3000);
-                        window.location.assign(App.appRoot + 'Usuarios/ListaUsuarios');
+                        window.location.assign(App.appRoot + 'Usuario/ListaUsuarios');
                     }, function (xhr, textStatus, err) {
                         alert(err);
                     });
@@ -205,4 +205,3 @@ var Usuarios;
     }());
     Usuarios.DetalleUsuarioViewModel = DetalleUsuarioViewModel;
 })(Usuarios || (Usuarios = {}));
-//# sourceMappingURL=DetalleUsuarioViewModel.js.map

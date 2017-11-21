@@ -14,7 +14,7 @@ var Usuarios;
                 icon: 'plus',
                 type: 'success',
                 onClick: function (e) {
-                    var url = App.appRoot + 'Usuarios/CrearUsuario';
+                    var url = App.appRoot + 'Usuario/CrearUsuario';
                     window.location.assign(url);
                 }
             };
@@ -75,4 +75,3 @@ var Usuarios;
     }());
     Usuarios.ListaUsuariosViewModel = ListaUsuariosViewModel;
 })(Usuarios || (Usuarios = {}));
-//# sourceMappingURL=ListaUsuariosViewModel.js.map

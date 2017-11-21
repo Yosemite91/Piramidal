@@ -14,7 +14,7 @@ namespace Usuarios {
             icon: 'plus',
             type: 'success',
             onClick: function (e: any) {
-                let url: string = App.appRoot + 'Usuarios/CrearUsuario';
+                let url: string = App.appRoot + 'Usuario/CrearUsuario';
                 window.location.assign(url);
             }
         };

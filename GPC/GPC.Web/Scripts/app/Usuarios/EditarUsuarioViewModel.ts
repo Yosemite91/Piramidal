@@ -81,7 +81,7 @@ namespace Usuarios {
                     }).then(
                         function (data) {
                             DevExpress.ui.notify('Usuario Modificado', 'success', 3000);
-                            window.location.assign(App.appRoot + 'Usuarios/ListaUsuarios');
+                            window.location.assign(App.appRoot + 'Usuario/ListaUsuarios');
                         },
                         function (xhr, textStatus, err) {
                             this.loading(false);
