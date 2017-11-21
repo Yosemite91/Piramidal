@@ -146,9 +146,46 @@ Namespace Controllers.APIControllers
             Return Me.CreatedAtRoute("desbloquearUsuario", New With {.Run = usuario.Run}, "Usuario Modificado exitosamente")
         End Function
 #End Region
+
+#Region "EditarUsuario"
+        <Route("editar", Name:="editarUsuario")>
+        <HttpPut>
+        Public Async Function EditarUsuario(<FromBody> model As UsuarioModel) As Task(Of IHttpActionResult)
+            Dim db As New GpcDBContext()
+            Dim usuario As New Usuario
+            Try
+                Dim ID As Integer? = Await db.Usuarios _
+                        .Where(Function(u) u.Run = model.Run) _
+                        .Select(Function(u) u.ID) _
+                        .FirstOrDefaultAsync()
+                If String.IsNullOrEmpty(ID) Then
+                    Return Me.Content(HttpStatusCode.BadRequest, String.Format("No existe el usuario asociado a este run. error"))
+                End If
+
+                usuario = db.Usuarios.Find(ID)
+                With usuario
+                    .Nombre = model.Nombre
+                    .Apellido = model.Apellido
+                    .Run = model.Run
+                    .Telefono = model.Telefono
+                    .Email = model.Email
+                    .FechaNacimiento = model.FechaNacimiento
+                    .EsAdministrador = model.EsAdministrador
+                    .EsColaborador = model.EsColaborador
+                    .Ubicacion = model.Ubicacion
+                    .Asociado = model.Asociado
+                    .Foto = Encoding.ASCII.GetBytes(model.Foto)
+                    .EsActivo = model.EsActivo
+                End With
+                Await db.SaveChangesAsync()
+            Catch ex As Exception
+                Return Me.Content(HttpStatusCode.BadRequest, String.Format("Problemas para guardar cambios. Error: {0}", ex.Message))
+            Finally
+                db.Dispose()
+            End Try
+            Return Me.CreatedAtRoute("editarUsuario", New With {.Run = usuario.Run}, "Usuario Modificado exitosamente")
+        End Function
+#End Region
+
     End Class
-
-
-
-
 End Namespace

@@ -4,7 +4,8 @@
 /// <reference path='IUsuarioModel.d.ts' />
 
 namespace Usuarios {
-    export class CrearUsuarioViewModel {
+
+    export class EditarUsuarioViewModel {
         public usuario: KnockoutObservable<IUsuarioModel> = ko.observable<IUsuarioModel>({
             id: null,
             nombre: null,
@@ -25,60 +26,35 @@ namespace Usuarios {
         });
 
         //PopUp
-        private popUpCancelarCreacionUsuario = ko.observable(false);
-        private popUpCrearUsuario = ko.observable(false);
+        private popUpCancelarModificar = ko.observable(false);
+        private popUpModificarUsuario = ko.observable(false);
 
-        // POP-UP CANCELAR
-        public popUpCancelar = {
+        public popUpModificar = {
             width: 'auto',
             height: 'auto',
-            contentTemplate: '¿Volver a la página anterior?',
+            contentTemplate: '¿Modificar usuario actual?',
             showTitle: true,
             showCloseButton: true,
             title: 'Alerta',
-            visible: this.popUpCancelarCreacionUsuario,
+            visible: this.popUpModificarUsuario,
             dragEnabled: false,
             closeOnOutsideClick: false,
             toolbarItems: [{
                 toolbar: 'bottom',
                 widget: 'button',
                 options: { text: 'OK' },
-                onClick: function (e: any) {
-                    window.location.assign(App.appRoot + 'Usuarios/ListaUsuarios');
-                }
-            }
-            ]
-        };
-
-        // POP-UP CREAR
-        public popUpCrear = {
-            width: 'auto',
-            height: 'auto',
-            contentTemplate: '¿Quiere crear este nuevo usuario?',
-            showTitle: true,
-            showCloseButton: true,
-            title: 'Alerta',
-            visible: this.popUpCrearUsuario,
-            dragEnabled: false,
-            closeOnOutsideClick: false,
-            toolbarItems: [{
-                toolbar: 'bottom',
-                widget: 'dxButton',
-                options: { text: 'OK' },
                 onClick: (e: any): void => {
                     this.loading(true);
-
                     if (this.FotoUsuario() === undefined) {
                         let foto: IFoto = {
-                            cuerpo: "data:image/jpeg;base64,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",
+                            cuerpo: this.fotoDX(),
                             usuarioID: null,
-                            nombre: "nombre",
+                            nombre: "foto",
                             id: null
                         }
                         this.FotoUsuario(foto);
                     }
 
-                    //Volcando información de formulario
                     var UsuarioDTO = {
                         nombre: this.usuario().nombre,
                         apellido: this.usuario().apellido,
@@ -93,41 +69,58 @@ namespace Usuarios {
                         asociado: this.usuario().asociado,
                         foto: this.FotoUsuario().cuerpo
                     };
-
                     var info = JSON.stringify(UsuarioDTO);
+
                     $.ajax({
-                        url: App.apiRoot + 'usuarios/crear',
+                        url: App.apiRoot + 'usuarios/editar/',
                         cache: false,
-                        type: 'POST',
+                        type: 'PUT',
                         contentType: 'application/json; charset=utf-8',
                         data: info,
                         dataType: 'json'
                     }).then(
                         function (data) {
-                            DevExpress.ui.notify('USUARIO CREADO', 'success', 3000);
+                            DevExpress.ui.notify('Usuario Modificado', 'success', 3000);
                             window.location.assign(App.appRoot + 'Usuarios/ListaUsuarios');
                         },
                         function (xhr, textStatus, err) {
                             this.loading(false);
                             alert(err);
-                        }
-                        );
+                        });
+                }
+            }]
+        };
+        public popUpCancelar = {
+            width: 'auto',
+            height: 'auto',
+            contentTemplate: '¿Volver a la página principal?',
+            showTitle: true,
+            showCloseButton: true,
+            title: 'Alerta',
+            visible: this.popUpCancelarModificar,
+            dragEnabled: false,
+            closeOnOutsideClick: false,
+            toolbarItems: [{
+                toolbar: 'bottom',
+                widget: 'button',
+                options: { text: 'OK' },
+                onClick: function (e: any) {
+                    window.history.back();
                 }
             }]
         };
 
-        // BOTONES GUARDAR
+        //Buttons
         public botonGuardar = {
             text: 'Guardar',
-            icon: 'floppy',
             type: 'success',
-            onClick: (e: any): void => {
+            icon: 'floppy',
+            onClick: function (e: any) {
                 var result = e.validationGroup.validate();
 
                 var UsuarioValidacion = {
                     Nombre: this.usuario().nombre,
                     Apellido: this.usuario().apellido,
-                    Run: this.usuario().run,
                     Email: this.usuario().email,
                     Telefono: this.usuario().telefono,
                     Ubicacion: this.usuario().ubicacion,
@@ -135,23 +128,53 @@ namespace Usuarios {
                 };
 
                 if (result.isValid) {
-                    this.popUpCrearUsuario(true);
+                    this.popUpModificarUsuario(true);
                 }
                 else {
                     App.alertaFormulario(UsuarioValidacion);
                 }
             }
         };
-
-        // BOTONES CANCELAR
-        public botonCancelar = {
+        public botonCancelarEdicion = {
             text: 'Cancelar',
             icon: 'close',
             type: 'danger',
             onClick: (e: any): void => {
-                this.popUpCancelarCreacionUsuario(true);
+                this.popUpCancelarModificar(true);
             }
         };
+
+        //Declaración de observables
+        public nombreDX: KnockoutObservable<string> = ko.observable<string>();
+        public apellidoDX: KnockoutObservable<string> = ko.observable<string>();
+        public emailDX: KnockoutObservable<string> = ko.observable<string>();
+        public telefonoDX: KnockoutObservable<string> = ko.observable<string>();
+        public fechaNacimientoDX: KnockoutObservable<Date> = ko.observable<Date>();        
+        public esActivoDX: KnockoutObservable<boolean> = ko.observable<boolean>();
+        public esAdministradorDX: KnockoutObservable<boolean> = ko.observable<boolean>();
+        public esColaboradorDX: KnockoutObservable<boolean> = ko.observable<boolean>();
+        public ubicacionDX: KnockoutObservable<number> = ko.observable<number>();
+        public asociadoDX: KnockoutObservable<number> = ko.observable<number>();
+        public runDX: KnockoutObservable<string> = ko.observable<string>();
+        public passwordDX: KnockoutObservable<string> = ko.observable<string>();
+        public fotoDX: KnockoutObservable<string> = ko.observable<string>();
+
+        //Estableciendo el enlace
+        public loadObject: (result: IUsuarioModel) => void = (result: IUsuarioModel): void => {
+            this.nombreDX(result.nombre);
+            this.apellidoDX(result.apellido);            
+            this.emailDX(result.email);
+            this.telefonoDX(result.telefono);
+            this.fechaNacimientoDX(result.fechaNacimiento);
+            this.esActivoDX(result.esActivo);
+            this.esAdministradorDX(result.esAdministrador);
+            this.esColaboradorDX(result.esColaborador);
+            this.ubicacionDX(result.ubicacion);
+            this.asociadoDX(result.asociado);
+            this.runDX(result.run);
+            this.passwordDX(result.password);
+            this.fotoDX(result.foto);
+        }
 
         // VALIDADOR DE DATOS
         public validatorOptions: DevExpress.ui.dxValidatorOptions = {
@@ -183,16 +206,22 @@ namespace Usuarios {
 
         // FORMULARIO
         public dxNombre = {
+            value: this.nombreDX,
             width: 'auto',
             editorOptions: {
                 mode: 'text'
             },
+            validationRules: [{
+                type: 'required',
+                message: 'Campo requerido'
+            }],
             showClearButton: true,
             onValueChanged: (e: any) => {
                 this.usuario().nombre = e.value;
             }
         }
         public dxApellido = {
+            value: this.apellidoDX,
             width: 'auto',
             editorOptions: {
                 mode: 'text'
@@ -205,16 +234,25 @@ namespace Usuarios {
             onValueChanged: (e: any) => {
                 this.usuario().apellido = e.value;
             }
-        }
+        }        
         public dxEmail = {
+            value: this.emailDX,
             width: 'auto',
-            placeholder: 'ejemplo@uta.cl',
+            placeholder: 'ejemplo@tpa.cl',
+            editorOptions: {
+                mode: 'email',
+            },
+            validationRules: [{
+                type: 'required',
+                message: 'Campo requerido'
+            }],
             showClearButton: true,
             onValueChanged: (e: any) => {
                 this.usuario().email = e.value;
             }
         }
         public dxTelefono = {
+            value: this.telefonoDX,
             width: 'auto',
             placeholder: '+56 9 1234 5678',
             editorOptions: {
@@ -226,6 +264,7 @@ namespace Usuarios {
             }
         }
         public dxRun = {
+            value: this.runDX,
             width: 'auto',
             mask: 'ZZ.ZZZ.ZZZYK',
             maskRules: {
@@ -245,6 +284,7 @@ namespace Usuarios {
         public dxFechaNacimiento = {
             max: new Date(App.anioMinimo(), 0),
             min: new Date((App.anioMinimo() - 70), 0),
+            value: this.fechaNacimientoDX,
             width: 'auto',
             editorOptions: {
                 format: 'dd/MM/yyyy',
@@ -256,10 +296,10 @@ namespace Usuarios {
             onValueChanged: (e: any) => {
                 this.usuario().fechaNacimiento = new Date(e.value);
             }
-        }        
+        }
         public dxUbicacion = <DevExpress.ui.dxSelectBoxOptions>{
             dataSource: [
-                { region: "Metropolitana", numero: 0 },                
+                { region: "Metropolitana", numero: 0 },
                 { region: "Tarapacá", numero: 1 },
                 { region: "Antofagasta", numero: 2 },
                 { region: "Atacama", numero: 3 },
@@ -274,11 +314,11 @@ namespace Usuarios {
                 { region: "Aysen", numero: 12 },
                 { region: "Magallanes Antártica", numero: 13 },
                 { region: "Arica y Parinacota", numero: 14 }
-                        ],
+            ],
             valueExpr: "numero",
             displayExpr: "region",
             placeholder: "Seleccione región",
-            value: null,
+            value: this.ubicacionDX,
             validationRules: [{
                 type: 'required',
                 message: 'Seleccione región'
@@ -298,7 +338,7 @@ namespace Usuarios {
             valueExpr: "numero",
             displayExpr: "empresa",
             placeholder: "Seleccione empresa",
-            value: null,
+            value: this.asociadoDX,
             validationRules: [{
                 type: 'required',
                 message: 'Seleccione empresa'
@@ -311,7 +351,7 @@ namespace Usuarios {
             //}
         }
         public dxEsAdministrador = {
-            value: false,
+            value: this.esAdministradorDX,
             onText: 'SI',
             offText: 'NO',
             onValueChanged: (e: any) => {
@@ -319,11 +359,19 @@ namespace Usuarios {
             }
         }
         public dxEsColaborador = {
-            value: false,
+            value: this.esColaboradorDX,
             onText: 'SI',
             offText: 'NO',
             onValueChanged: (e: any) => {
                 this.usuario().esColaborador = e.value;
+            }
+        }
+        public dxActivo = {
+            value: this.esActivoDX,
+            onText: 'SI',
+            offText: 'NO',
+            onValueChanged: (e: any) => {
+                this.usuario().esActivo = e.value;
             }
         }
         public dxSubirImagen = {
@@ -360,10 +408,21 @@ namespace Usuarios {
         }
 
         public FotoUsuario: KnockoutObservable<IFoto> = ko.observable<IFoto>();
+
         public loading: KnockoutObservable<boolean> = ko.observable(false);
+        public esNuevo: KnockoutObservable<boolean> = ko.observable(false);
+
         constructor() {
+            this.loading(true);
+            const run: string = window.location.search.replace('?run=', '');
 
+            $.getJSON(App.apiRoot + 'usuarios/get/' + run).then((result: IUsuarioModel): void => {
+                this.loadObject(result);
+                this.fotoDX(result.foto);
+                this.loading(false);
+            });
         }
-    }
-}
 
+    }
+
+}

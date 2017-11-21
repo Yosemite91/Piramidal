@@ -148,7 +148,7 @@ namespace Usuarios {
                                 displayFormat: 'dd/MM/yyyy',
                                 width: 'auto'
                             }
-                        }, 'email'
+                        }, 'email', 'ubicacion', 'asociado'
                     ]
                 },
                 <DevExpress.ui.dxFormGroupItem>{
@@ -211,7 +211,7 @@ namespace Usuarios {
                 else {
                     $('#bloquear-button').dxButton({ disabled: true });
                     $('#desbloquear-button').dxButton({ disabled: false });
-                }
+                }              
                 $('#usuario-form').dxForm('instance').repaint();
                 this.loading(false);
             });

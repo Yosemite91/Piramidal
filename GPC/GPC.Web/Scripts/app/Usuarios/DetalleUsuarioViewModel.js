@@ -138,7 +138,7 @@ var Usuarios;
                                     displayFormat: 'dd/MM/yyyy',
                                     width: 'auto'
                                 }
-                            }, 'email'
+                            }, 'email', 'ubicacion', 'asociado'
                         ]
                     },
                     {

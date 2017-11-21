@@ -264,7 +264,7 @@ var Usuarios;
                 valueExpr: "numero",
                 displayExpr: "region",
                 placeholder: "Seleccione región",
-                value: 0,
+                value: null,
                 validationRules: [{
                         type: 'required',
                         message: 'Seleccione región'
@@ -281,7 +281,7 @@ var Usuarios;
                 valueExpr: "numero",
                 displayExpr: "empresa",
                 placeholder: "Seleccione empresa",
-                value: 0,
+                value: null,
                 validationRules: [{
                         type: 'required',
                         message: 'Seleccione empresa'
