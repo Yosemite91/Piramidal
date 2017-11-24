@@ -36,7 +36,7 @@ End Code
                 </div>
 
                 <div class="dx-field">
-                    <div class="dx-field-label">Fecha Termino</div>
+                    <div class="dx-field-label">Fecha Término</div>
                     <div class="dx-field-value">
                         <div data-bind="dxDateBox: dxFechaTermino, dxValidator: validatorOptions"></div>
                     </div>

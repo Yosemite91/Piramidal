@@ -26,6 +26,7 @@ Namespace Controllers.APIControllers
                 actividad.FechaInicio = model.FechaInicio
                 actividad.FechaTermino = model.FechaTermino
                 actividad.Ubicacion = model.Ubicacion
+                actividad.CreadorID = 1
 
                 db.Actividades.Add(actividad)
                 Await db.SaveChangesAsync()
