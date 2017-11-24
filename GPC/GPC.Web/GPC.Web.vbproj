@@ -257,11 +257,14 @@
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\Startup.Auth.vb" />
     <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="Controllers\ActividadController.vb" />
+    <Compile Include="Controllers\APIControllers\ActividadApiController.vb" />
     <Compile Include="Controllers\APIControllers\UsuarioApiController.vb" />
     <Compile Include="Controllers\UsuarioController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ActividadModel.vb" />
     <Compile Include="Models\IdentityModels.vb" />
     <Compile Include="Models\ManageViewModels.vb" />
     <Compile Include="Models\UsuarioModel.vb" />
@@ -418,6 +421,7 @@
     <Content Include="Views\Usuario\DetalleUsuario.vbhtml" />
     <Content Include="Views\Usuario\ListaUsuarios.vbhtml" />
     <Content Include="Views\Usuario\EditarUsuario.vbhtml" />
+    <Content Include="Views\Actividad\CrearActividad.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -446,6 +450,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\app\Actividades\CrearActividadViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\app\Actividades\IActividadModel.d.ts" />
     <TypeScriptCompile Include="Scripts\app\app.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\CrearUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\DetalleUsuarioViewModel.ts" />
