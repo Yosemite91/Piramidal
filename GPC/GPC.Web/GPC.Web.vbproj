@@ -423,6 +423,7 @@
     <Content Include="Views\Usuario\ListaUsuarios.vbhtml" />
     <Content Include="Views\Usuario\EditarUsuario.vbhtml" />
     <Content Include="Views\Login\Login.vbhtml" />
+    <Content Include="Views\Usuario\MiPerfil.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -445,7 +446,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\LoginApi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -461,6 +461,7 @@
     <TypeScriptCompile Include="Scripts\app\Usuarios\IFoto.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\IUsuarioModel.d.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\ListaUsuariosViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\app\Usuarios\MiPerfilViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Utils.ts" />
     <TypeScriptCompile Include="Scripts\typings\devextreme\devextreme.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />

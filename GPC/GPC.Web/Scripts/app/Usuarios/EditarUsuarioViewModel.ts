@@ -82,7 +82,7 @@ namespace Usuarios {
                     }).then(
                         function (data) {
                             DevExpress.ui.notify('Usuario Modificado', 'success', 3000);
-                            window.location.assign(App.appRoot + 'Usuario/ListaUsuarios');
+                            window.history.back();
                         },
                         function (xhr, textStatus, err) {
                             this.loading(false);
@@ -421,6 +421,7 @@ namespace Usuarios {
                 this.loadObject(result);
                 this.fotoDX(result.foto);
                 this.loading(false);
+
             });
         }
 

@@ -42,8 +42,7 @@ namespace Login {
                         localStorage.setItem(App.appPrefix + 'login.esColaborador', result.esColaborador);
 
                         if (result) {
-                            let url: string = App.appRoot + 'Usuario/ListaUsuarios';
-                            //CAMBIAR DIRECCIONAMIENTO A "Mi Perfil"
+                            let url: string = App.appRoot + 'Usuario/MiPerfil';                            
                             window.location.href = url;
                         }
                     }
