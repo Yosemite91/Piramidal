@@ -257,14 +257,18 @@
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\Startup.Auth.vb" />
     <Compile Include="App_Start\WebApiConfig.vb" />
+    <Compile Include="Controllers\APIControllers\LoginApiController.vb" />
     <Compile Include="Controllers\APIControllers\UsuarioApiController.vb" />
+    <Compile Include="Controllers\LoginController.vb" />
     <Compile Include="Controllers\UsuarioController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.vb" />
+    <Compile Include="Models\LoginModel.vb" />
     <Compile Include="Models\ManageViewModels.vb" />
     <Compile Include="Models\UsuarioModel.vb" />
+    <Compile Include="Modules\BasicAuthHttpModule.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -418,6 +422,7 @@
     <Content Include="Views\Usuario\DetalleUsuario.vbhtml" />
     <Content Include="Views\Usuario\ListaUsuarios.vbhtml" />
     <Content Include="Views\Usuario\EditarUsuario.vbhtml" />
+    <Content Include="Views\Login\Login.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -440,6 +445,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\LoginApi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -447,6 +453,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app\app.ts" />
+    <TypeScriptCompile Include="Scripts\app\Login\LoginModel.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\Login\LoginViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\CrearUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\DetalleUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\EditarUsuarioViewModel.ts" />

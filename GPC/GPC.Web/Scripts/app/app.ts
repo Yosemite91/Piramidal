@@ -7,7 +7,7 @@ namespace App {
     //MODIFICAR PARA LOGIN
     export var appPrefix: string = 'GPC';        
     export var esAdministrador: boolean = localStorage.getItem(App.appPrefix + 'login.esAdministrador');
-    export var esAdminPublicacion: boolean = localStorage.getItem(App.appPrefix + 'login.esAdminPublicacion');
+    export var esAdminPublicacion: boolean = localStorage.getItem(App.appPrefix + 'login.esColaborador');
     export var runEmprendedor: string  = localStorage.getItem(App.appPrefix + 'login.run');
     
     $.ajaxSetup({
@@ -28,7 +28,7 @@ namespace App {
 
     export function goToLogin(): any {                      
         localStorage.removeItem(appPrefix + 'login.esAdministrador');
-        localStorage.removeItem(appPrefix + 'login.esAdminPublicacion');
+        localStorage.removeItem(appPrefix + 'login.esColaborador');
         localStorage.removeItem(appPrefix + 'login.token');
         localStorage.removeItem(appPrefix + 'login.run');
         let urlLogin: string = 'http://' + window.location.host + App.apiRoot.replace('/api/', '/');

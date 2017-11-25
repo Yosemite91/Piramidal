@@ -1,0 +1,1 @@
+//# sourceMappingURL=IFoto.js.map

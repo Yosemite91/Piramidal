@@ -66,6 +66,7 @@ namespace Usuarios {
                         ubicacion: this.usuario().ubicacion,
                         esAdministrador: this.usuario().esAdministrador,
                         esColaborador: this.usuario().esColaborador,
+                        esActivo: this.usuario().esActivo,
                         asociado: this.usuario().asociado,
                         foto: this.FotoUsuario().cuerpo
                     };

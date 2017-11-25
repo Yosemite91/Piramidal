@@ -87,6 +87,15 @@ End Code
                         <div data-bind="dxSwitch: dxEsColaborador"></div>
                     </div>
                 </div>
+
+                @* NO EDITABLE DE PREFERENCIA *@
+                <div class="dx-field" style="display: none">
+                    <div class="dx-field-label">¿Es Activo?</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxSwitch: dxActivo"></div>
+                    </div>
+                </div>
+
                 <br />
                 @* UPLOAD IMAGE *@
                 <div class="dx-fieldset-header">Foto Usuario</div>
