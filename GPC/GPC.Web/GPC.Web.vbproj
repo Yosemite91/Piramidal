@@ -423,6 +423,7 @@
     <Content Include="Views\Usuario\EditarUsuario.vbhtml" />
     <Content Include="Views\Actividad\CrearActividad.vbhtml" />
     <Content Include="Views\Actividad\DetalleActividad.vbhtml" />
+    <Content Include="Views\Actividad\ListaActividades.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

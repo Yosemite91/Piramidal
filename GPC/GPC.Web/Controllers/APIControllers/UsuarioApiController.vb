@@ -184,7 +184,6 @@ Namespace Controllers.APIControllers
         End Function
 #End Region
 
-
 #Region "EditarUsuario"
         <Route("editar", Name:="editarUsuario")>
         <HttpPut>

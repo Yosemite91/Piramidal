@@ -11,5 +11,10 @@ Namespace Controllers
         Function DetalleActividad() As ActionResult
             Return View()
         End Function
+
+        Function ListaActividades() As ActionResult
+            Return View()
+        End Function
+
     End Class
 End Namespace

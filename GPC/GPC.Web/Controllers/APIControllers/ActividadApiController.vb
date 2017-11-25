@@ -71,5 +71,32 @@ Namespace Controllers.APIControllers
         End Function
 #End Region
 
+#Region "Lista Actividades"
+        <Route("lista", Name:="GetActividades")>
+        <HttpGet>
+        Public Async Function GetPremios() As Task(Of IHttpActionResult)
+            Dim db As New GpcDBContext
+
+
+            Dim actividades As List(Of ActividadModel) = Nothing
+
+            Try
+                actividades = Await db.Actividades _
+                           .Select(Function(u) New ActividadModel With {
+                                                               .ID = u.ID,
+                                                               .Nombre = u.Nombre,
+                                                               .Descripcion = u.Descripcion
+                                                            }) _
+                           .ToListAsync()
+
+                Return Me.Ok(actividades)
+            Catch ex As Exception
+                Return Me.Content(HttpStatusCode.BadRequest, String.Format("Problemas para retornar premios. Error: {0}", ex.Message))
+            Finally
+                db.Dispose()
+            End Try
+
+        End Function
+#End Region
     End Class
 End Namespace
