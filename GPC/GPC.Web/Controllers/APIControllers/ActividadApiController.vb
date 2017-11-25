@@ -40,5 +40,36 @@ Namespace Controllers.APIControllers
 
 #End Region
 
+#Region "Get Actividad"
+        <Route("detalle/{id:int}", Name:="getActividad")>
+        <HttpGet>
+        Public Async Function GetActividad(id As Integer) As Task(Of IHttpActionResult)
+            Dim db As New GpcDBContext()
+            Dim result As ActividadModel = Nothing
+            Try
+
+                result = Await db.Actividades.Where(Function(u) u.ID = id) _
+                            .Select(Function(u) New ActividadModel With {
+                                                                    .Nombre = u.Nombre,
+                                                                    .Descripcion = u.Descripcion,
+                                                                    .FechaInicio = u.FechaInicio,
+                                                                    .FechaTermino = u.FechaTermino,
+                                                                    .Ubicacion = u.Ubicacion,
+                                                                    .ID = u.ID
+                                                                  }) _
+                            .SingleOrDefaultAsync()
+
+            Catch ex As Exception
+                Return Me.Content(HttpStatusCode.BadRequest, String.Format("Problemas para retornar la actividad. Error: {0}", ex.Message))
+            Finally
+                db.Dispose()
+            End Try
+
+            If result IsNot Nothing Then Return Me.Ok(result)
+            Return Me.Content(HttpStatusCode.NotFound, "Información no encontrada")
+
+        End Function
+#End Region
+
     End Class
 End Namespace

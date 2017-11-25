@@ -8,5 +8,8 @@ Namespace Controllers
             Return View()
         End Function
 
+        Function DetalleActividad() As ActionResult
+            Return View()
+        End Function
     End Class
 End Namespace
