@@ -259,12 +259,14 @@
     <Compile Include="App_Start\WebApiConfig.vb" />
     <Compile Include="Controllers\APIControllers\LoginApiController.vb" />
     <Compile Include="Controllers\APIControllers\UsuarioApiController.vb" />
+    <Compile Include="Controllers\IndexController.vb" />
     <Compile Include="Controllers\LoginController.vb" />
     <Compile Include="Controllers\UsuarioController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.vb" />
+    <Compile Include="Models\IndexModel.vb" />
     <Compile Include="Models\LoginModel.vb" />
     <Compile Include="Models\ManageViewModels.vb" />
     <Compile Include="Models\UsuarioModel.vb" />
@@ -424,6 +426,7 @@
     <Content Include="Views\Usuario\EditarUsuario.vbhtml" />
     <Content Include="Views\Login\Login.vbhtml" />
     <Content Include="Views\Usuario\MiPerfil.vbhtml" />
+    <Content Include="Views\Index\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -453,6 +456,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app\app.ts" />
+    <TypeScriptCompile Include="Scripts\app\Index\IndexViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Login\LoginModel.d.ts" />
     <TypeScriptCompile Include="Scripts\app\Login\LoginViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\CrearUsuarioViewModel.ts" />

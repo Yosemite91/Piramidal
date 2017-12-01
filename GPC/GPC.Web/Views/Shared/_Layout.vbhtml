@@ -18,23 +18,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nombre de aplicación", "Index", "Home", New With { .area = "" }, New With { .class = "navbar-brand" })
+                @Html.ActionLink("GPC", "Index", "Home", New With {.area = ""}, New With {.class = "navbar-brand"})
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav">                    
+                    <li>@Html.ActionLink("Inicio", "Index", "Index")</li>
+                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>                    
                     <!-- ko if: Token === null -->
                     <li>
                         @Html.ActionLink("Iniciar Sesión", "Login", "Login")
                     </li>
                     <!-- /ko -->
                     <!-- ko if: Token !== null -->
+                    <li>@Html.ActionLink("Usuarios", "ListaUsuarios", "Usuario")</li>
                     <li>
                         <a href="#" onClick="Salir();"> Cerrar Sesión</a>
                     </li>
                     <!-- /ko -->
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>                    
                 </ul>
             </div>
         </div>
