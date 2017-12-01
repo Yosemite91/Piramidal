@@ -8,5 +8,9 @@ Namespace Controllers
             Return View()
         End Function
 
+        Function ListaPostulaciones() As ActionResult
+            ViewData("Title") = "Lista Postulaciones"
+            Return View()
+        End Function
     End Class
 End Namespace

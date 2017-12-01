@@ -32,7 +32,8 @@
                     <!-- /ko -->
                     <!-- ko if: Token !== null -->
                     <li>@Html.ActionLink("Usuarios", "ListaUsuarios", "Usuario")</li>
-                    <li>@Html.ActionLink("Postulación", "CrearPostulacion", "Postulacion")</li>
+                    <li>@Html.ActionLink("Postular", "CrearPostulacion", "Postulacion")</li>
+                    <li>@Html.ActionLink("Postulaciones", "ListaPostulaciones", "Postulacion")</li>
                     <li>
                         <a href="#" onClick="Salir();"> Cerrar Sesión</a>
                     </li>

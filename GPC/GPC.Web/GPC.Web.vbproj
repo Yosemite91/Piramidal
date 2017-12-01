@@ -431,6 +431,7 @@
     <Content Include="Views\Usuario\MiPerfil.vbhtml" />
     <Content Include="Views\Index\Index.vbhtml" />
     <Content Include="Views\Postulacion\CrearPostulacion.vbhtml" />
+    <Content Include="Views\Postulacion\ListaPostulaciones.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -453,7 +454,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\PostulacionApi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -466,6 +466,7 @@
     <TypeScriptCompile Include="Scripts\app\Login\LoginViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Postulaciones\CrearPostulacionViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Postulaciones\IPostulanteModel.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\Postulaciones\ListaPostulacionesViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\CrearUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\DetalleUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\EditarUsuarioViewModel.ts" />
