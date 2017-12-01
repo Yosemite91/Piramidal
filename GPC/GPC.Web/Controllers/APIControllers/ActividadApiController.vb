@@ -98,5 +98,31 @@ Namespace Controllers.APIControllers
 
         End Function
 #End Region
+
+#Region "Editar Actividad"
+        <Route("editar", Name:="Editar actividad")>
+        <HttpPut>
+        Public Async Function PutActividad(<FromBody> model As ActividadModel) As Task(Of IHttpActionResult)
+            Dim db As New GpcDBContext()
+            Dim actividad As New Actividad
+
+            Try
+                actividad = db.Actividades.Find(model.ID)
+                With actividad
+                    .Nombre = model.Nombre
+                    .Descripcion = model.Descripcion
+                    .FechaInicio = model.FechaInicio
+                    .FechaTermino = model.FechaTermino
+                End With
+                Await db.SaveChangesAsync()
+            Catch ex As Exception
+                Return Me.Content(HttpStatusCode.BadRequest, "Problemas para guardar cambios")
+            Finally
+                db.Dispose()
+            End Try
+            Return Me.CreatedAtRoute("Editar Actividad", New With {.ID = actividad.ID}, "Actividad Modificado exitosamente")
+        End Function
+#End Region
+
     End Class
 End Namespace

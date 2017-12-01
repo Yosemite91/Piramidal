@@ -424,6 +424,7 @@
     <Content Include="Views\Actividad\CrearActividad.vbhtml" />
     <Content Include="Views\Actividad\DetalleActividad.vbhtml" />
     <Content Include="Views\Actividad\ListaActividades.vbhtml" />
+    <Content Include="Views\Actividad\EditarActividad.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -454,6 +455,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app\Actividades\CrearActividadViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Actividades\DetalleActividadViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\app\Actividades\EditarActividadViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Actividades\IActividadModel.d.ts" />
     <TypeScriptCompile Include="Scripts\app\app.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\CrearUsuarioViewModel.ts" />
