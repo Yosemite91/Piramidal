@@ -81,18 +81,37 @@ namespace Actividades {
                             dataField: 'fechaInicio',
                             editorType: 'dxDateBox',
                             editorOptions: {
-                                type: 'datetime',
+                                displayFormat: "dd/MM/yyyy",
                                 width: 'auto'
                             }
                            
                         }, <DevExpress.ui.dxFormSimpleItem>{
+                            dataField: 'fechaInicio',
+                            label: { text: 'Hora Inicio' },
+                            editorType: 'dxDateBox',
+                            editorOptions: {
+                                type: 'time',
+                                width: 'auto'
+                            }
+
+                        }
+                        , <DevExpress.ui.dxFormSimpleItem>{
                             dataField: 'fechaTermino',
                             editorType: 'dxDateBox',
                             editorOptions: {
-                                type: 'datetime',
+                                displayFormat: "dd/MM/yyyy",
                                 width: 'auto'
                             }
-                        }, 'descripcion'
+                        },
+                        <DevExpress.ui.dxFormSimpleItem>{
+                            dataField: 'fechaTermino',
+                            label: { text: 'Hora Término' },
+                            editorType: 'dxDateBox',
+                            editorOptions: {
+                                type: 'time',
+                                width: 'auto'
+                            }
+                        },'descripcion'
                     ]
                 }
             ]
