@@ -82,5 +82,58 @@ Namespace Controllers.APIControllers
         End Function
 #End Region
 
+#Region "GetPostulacion"
+        <Route("get/{run:regex(^[1-9][0-9]{0,7}-[0-9kK]$)}", Name:="getPostulacion")>
+        <HttpGet>
+        Public Async Function GetPostulacion(run As String) As Task(Of IHttpActionResult)
+            Dim db As New GpcDBContext()
+            Dim result As PostulacionModel = Nothing
+            Try
+
+                Dim user As Postulacion = Await db.Postulaciones.Where(Function(u) u.Run = run).SingleOrDefaultAsync()
+                result = New PostulacionModel With {
+                    .Run = user.Run,
+                    .EsActivo = user.EsActivo,
+                    .Email = user.Email,
+                    .Asociado = user.Asociado,
+                    .Ubicacion = user.Ubicacion,
+                    .FechaPostulacion = user.FechaPostulacion,
+                    .Curriculum = Encoding.Default.GetString(user.Curriculum)
+                }
+            Catch ex As Exception
+                Return Me.Content(HttpStatusCode.BadRequest, String.Format("Problemas para retornar postulación. Error: {0}", ex.Message))
+            Finally
+                db.Dispose()
+            End Try
+
+            If result IsNot Nothing Then Return Me.Ok(result)
+            Return Me.Content(HttpStatusCode.NotFound, "Información no encontrada")
+
+        End Function
+#End Region
+
+#Region "Eliminar Postulacion"
+        <Route("{run:regex(^[1-9][0-9]{0,7}-[0-9kK]$)}", Name:="deletePostulacion")>
+        <HttpPost>
+        Public Async Function DeletePostulacion(run As String) As Task(Of IHttpActionResult)
+            Dim db As New GpcDBContext()
+            Try
+                Dim ID As Integer? = Await db.Postulaciones _
+                       .Where(Function(u) u.Run = run) _
+                       .Select(Function(u) u.ID) _
+                       .FirstOrDefaultAsync()
+
+                Dim usuario As Postulacion = db.Postulaciones.Find(ID)
+                db.Postulaciones.Remove(usuario)
+                Await db.SaveChangesAsync()
+            Catch ex As Exception
+                Return Me.Content(HttpStatusCode.BadRequest, String.Format("Problemas para eliminar postulación. Error: {0}", ex.Message))
+            Finally
+                db.Dispose()
+            End Try
+            Return Me.StatusCode(HttpStatusCode.NoContent)
+        End Function
+#End Region
+
     End Class
 End Namespace

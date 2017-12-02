@@ -432,6 +432,7 @@
     <Content Include="Views\Index\Index.vbhtml" />
     <Content Include="Views\Postulacion\CrearPostulacion.vbhtml" />
     <Content Include="Views\Postulacion\ListaPostulaciones.vbhtml" />
+    <Content Include="Views\Postulacion\DetallePostulacion.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -465,6 +466,7 @@
     <TypeScriptCompile Include="Scripts\app\Login\LoginModel.d.ts" />
     <TypeScriptCompile Include="Scripts\app\Login\LoginViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Postulaciones\CrearPostulacionViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\app\Postulaciones\DetallePostulacionViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Postulaciones\IPostulanteModel.d.ts" />
     <TypeScriptCompile Include="Scripts\app\Postulaciones\ListaPostulacionesViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\CrearUsuarioViewModel.ts" />

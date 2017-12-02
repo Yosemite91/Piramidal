@@ -12,5 +12,11 @@ Namespace Controllers
             ViewData("Title") = "Lista Postulaciones"
             Return View()
         End Function
+
+        Function DetallePostulacion() As ActionResult
+            ViewData("Title") = "Detalle Postulacion"
+            Return View()
+        End Function
+
     End Class
 End Namespace
