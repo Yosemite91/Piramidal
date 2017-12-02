@@ -21,8 +21,8 @@ namespace Actividades {
             icon: 'edit',
             type: 'default',
             onClick: function (e: any) {
-                var run = this.usuario().run;
-                window.location.assign(App.appRoot + 'Usuario/EditarUsuario?run=' + run);
+                var id = this.actividad().id;
+                window.location.assign(App.appRoot + 'Actividad/EditarActividad?id=' + id);
             }
         };
 
@@ -52,34 +52,7 @@ namespace Actividades {
                     });
             }
         };
-        public botonDesbloquear = {
-            text: 'Desbloquear',
-            icon: 'check',
-            type: 'success',
-            onClick: (e: any): void => {
-                var UsuarioDTO = {
-                    //run: this.usuario().run
-                };
-                var info = JSON.stringify(UsuarioDTO);
-                $.ajax({
-                    url: App.apiRoot + 'usuarios/desbloquear/',
-                    cache: false,
-                    type: 'PUT',
-                    contentType: 'application/json; charset=utf-8',
-                    data: info,
-                    dataType: 'json'
-                }).then(
-                    function (data) {
-                        DevExpress.ui.notify('Usuario Desbloqueado', 'success', 3000);
-                        window.location.assign(App.appRoot + 'Usuario/ListaUsuarios');
-                    },
-                    function (xhr, textStatus, err) {
-                        alert(err);
-                    });
-            }
-        };
-
-        
+              
         public goBack = {
             icon: 'back',
             type: 'normal',
@@ -108,14 +81,15 @@ namespace Actividades {
                             dataField: 'fechaInicio',
                             editorType: 'dxDateBox',
                             editorOptions: {
-                                displayFormat: 'dd/MM/yyyy',
+                                type: 'datetime',
                                 width: 'auto'
                             }
+                           
                         }, <DevExpress.ui.dxFormSimpleItem>{
                             dataField: 'fechaTermino',
                             editorType: 'dxDateBox',
                             editorOptions: {
-                                displayFormat: 'dd/MM/yyyy',
+                                type: 'datetime',
                                 width: 'auto'
                             }
                         }, 'descripcion'

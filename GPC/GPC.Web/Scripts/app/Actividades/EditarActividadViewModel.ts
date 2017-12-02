@@ -171,6 +171,7 @@ namespace Actividades {
         public dxFechaInicio = {
             value: this.fechaInicioDX,
             width: 'auto',
+            type: "datetime",
             editorOptions: {
                 format: 'dd/MM/yyyy',
                 width: 'auto',
@@ -186,6 +187,7 @@ namespace Actividades {
         public dxFechaTermino = {
             value: this.fechaTerminoDX,
             width: 'auto',
+            type: "datetime",
             editorOptions: {
                 format: 'dd/MM/yyyy',
                 width: 'auto',
