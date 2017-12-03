@@ -75,3 +75,4 @@ var Usuarios;
     }());
     Usuarios.ListaUsuariosViewModel = ListaUsuariosViewModel;
 })(Usuarios || (Usuarios = {}));
+//# sourceMappingURL=ListaUsuariosViewModel.js.map

@@ -1,11 +1,8 @@
 ﻿@Code
-    ViewData("Title") = "Detalle Usuario"
+    ViewData("Title") = "Detalle Postulación"
 End Code
 <div id="titulo" class="long-title">
-    <h3>Detalle Usuario</h3>    
-</div>
-<div data-bind="foreach: fotoPerfil">
-    <img style="margin-bottom: 10px" class="img-circle img-responsive bubble" id="perfil" data-bind="attr: {src: cuerpo, alt: nombre}">
+    <h3>Detalle Postulación</h3>    
 </div>
 
 <div class="container">
@@ -15,25 +12,28 @@ End Code
 
             <div id="botonesDetalle">
                 <div id="volver" data-bind="dxButton: goBack"> </div>
-                <div id="solicitar-button" data-bind="dxButton: applyButtonOptionsRestaurarPass"> </div>
             </div>
 
             <div id="usuario-form" data-bind="dxForm: form"></div>
-            
+
             <div class="row">
                 <div id="bloquear-button" data-bind="dxButton: botonBloquear"> </div>
                 <div id="desbloquear-button" data-bind="dxButton: botonDesbloquear"> </div>
-                <div id="modificar-button" data-bind="dxButton: applyButtonOptionsModificar"> </div>
             </div>
-            
+        </div>
+
+        <br/>
+        @*CURRICULUM*@
+        <div data-bind="foreach: fotoPerfil">
+            <img class="img-thumbnail" id="perfil2" data-bind="attr: {src: cuerpo, alt: nombre}">
         </div>
     </div>
 </div>
 
 @Section Scripts
-    <script src="~/Scripts/app/Usuarios/DetalleUsuarioViewModel.js"></script>
-    <script>
-        ko.applyBindings(new Usuarios.DetalleUsuarioViewModel());
-    </script>
+<script src="~/Scripts/app/Postulaciones/DetallePostulacionViewModel.js"></script>
+<script>
+    ko.applyBindings(new Postulaciones.DetallePostulacionViewModel());
+</script>
 End Section
 

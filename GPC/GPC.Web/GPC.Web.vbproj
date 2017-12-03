@@ -259,15 +259,24 @@
     <Compile Include="App_Start\WebApiConfig.vb" />
     <Compile Include="Controllers\ActividadController.vb" />
     <Compile Include="Controllers\APIControllers\ActividadApiController.vb" />
+    <Compile Include="Controllers\APIControllers\LoginApiController.vb" />
+    <Compile Include="Controllers\APIControllers\PostulacionApiController.vb" />
     <Compile Include="Controllers\APIControllers\UsuarioApiController.vb" />
+    <Compile Include="Controllers\IndexController.vb" />
+    <Compile Include="Controllers\LoginController.vb" />
+    <Compile Include="Controllers\PostulacionController.vb" />
     <Compile Include="Controllers\UsuarioController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ActividadModel.vb" />
     <Compile Include="Models\IdentityModels.vb" />
+    <Compile Include="Models\IndexModel.vb" />
+    <Compile Include="Models\LoginModel.vb" />
     <Compile Include="Models\ManageViewModels.vb" />
+    <Compile Include="Models\PostulacionModel.vb" />
     <Compile Include="Models\UsuarioModel.vb" />
+    <Compile Include="Modules\BasicAuthHttpModule.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -425,6 +434,12 @@
     <Content Include="Views\Actividad\DetalleActividad.vbhtml" />
     <Content Include="Views\Actividad\ListaActividades.vbhtml" />
     <Content Include="Views\Actividad\EditarActividad.vbhtml" />
+    <Content Include="Views\Login\Login.vbhtml" />
+    <Content Include="Views\Usuario\MiPerfil.vbhtml" />
+    <Content Include="Views\Index\Index.vbhtml" />
+    <Content Include="Views\Postulacion\CrearPostulacion.vbhtml" />
+    <Content Include="Views\Postulacion\ListaPostulaciones.vbhtml" />
+    <Content Include="Views\Postulacion\DetallePostulacion.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -458,12 +473,20 @@
     <TypeScriptCompile Include="Scripts\app\Actividades\EditarActividadViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Actividades\IActividadModel.d.ts" />
     <TypeScriptCompile Include="Scripts\app\app.ts" />
+    <TypeScriptCompile Include="Scripts\app\Index\IndexViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\app\Login\LoginModel.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\Login\LoginViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\app\Postulaciones\CrearPostulacionViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\app\Postulaciones\DetallePostulacionViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\app\Postulaciones\IPostulanteModel.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\Postulaciones\ListaPostulacionesViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\CrearUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\DetalleUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\EditarUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\IFoto.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\IUsuarioModel.d.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\ListaUsuariosViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\app\Usuarios\MiPerfilViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Utils.ts" />
     <TypeScriptCompile Include="Scripts\typings\devextreme\devextreme.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />

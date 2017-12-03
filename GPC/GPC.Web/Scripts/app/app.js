@@ -5,7 +5,7 @@ var App;
     //MODIFICAR PARA LOGIN
     App.appPrefix = 'GPC';
     App.esAdministrador = localStorage.getItem(App.appPrefix + 'login.esAdministrador');
-    App.esAdminPublicacion = localStorage.getItem(App.appPrefix + 'login.esAdminPublicacion');
+    App.esAdminPublicacion = localStorage.getItem(App.appPrefix + 'login.esColaborador');
     App.runEmprendedor = localStorage.getItem(App.appPrefix + 'login.run');
     $.ajaxSetup({
         headers: GetAutorizationHeaders(),
@@ -24,7 +24,7 @@ var App;
     }
     function goToLogin() {
         localStorage.removeItem(App.appPrefix + 'login.esAdministrador');
-        localStorage.removeItem(App.appPrefix + 'login.esAdminPublicacion');
+        localStorage.removeItem(App.appPrefix + 'login.esColaborador');
         localStorage.removeItem(App.appPrefix + 'login.token');
         localStorage.removeItem(App.appPrefix + 'login.run');
         var urlLogin = 'http://' + window.location.host + App.apiRoot.replace('/api/', '/');
@@ -55,3 +55,4 @@ var App;
     }
     App.alertaFormulario = alertaFormulario;
 })(App || (App = {}));
+//# sourceMappingURL=app.js.map

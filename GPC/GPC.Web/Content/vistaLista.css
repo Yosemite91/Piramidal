@@ -45,6 +45,14 @@
     height: 100%;
     border-radius: 7px;
 }
+#perfil2 {
+    display:flex;
+    margin: auto;
+    align-content:center;
+    width: 80%;
+    height: 100%;
+    border-radius: 7px;
+}
 #aboutUs{
     padding-top: 30px;
     padding-left: 50px;
@@ -56,6 +64,7 @@
     width: 100%;
     padding: 0.25%;
     margin-bottom: 15px;
+    margin-top: 50px;
 }
 #customPadding{
     padding-left: 15px;

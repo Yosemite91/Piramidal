@@ -18,23 +18,37 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nombre de aplicación", "Index", "Home", New With { .area = "" }, New With { .class = "navbar-brand" })
+                @Html.ActionLink("GPC", "Index", "Home", New With {.area = ""}, New With {.class = "navbar-brand"})
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                <ul class="nav navbar-nav">                    
+                    <li>@Html.ActionLink("Inicio", "Index", "Index")</li>
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>                    
+                    <!-- ko if: Token === null -->
+                    <li>
+                        @Html.ActionLink("Iniciar Sesión", "Login", "Login")
+                    </li>
+                    <!-- /ko -->
+                    <!-- ko if: Token !== null -->
+                    <li>@Html.ActionLink("Usuarios", "ListaUsuarios", "Usuario")</li>
+                    <li>@Html.ActionLink("Postular", "CrearPostulacion", "Postulacion")</li>
+                    <li>@Html.ActionLink("Postulaciones", "ListaPostulaciones", "Postulacion")</li>
+                    <li>@Html.ActionLink("Actividades", "ListaActividades", "Postulacion")</li>
+                    <li>
+                        <a href="#" onClick="Salir();"> Cerrar Sesión</a>
+                    </li>
+                    <!-- /ko -->
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - PIRAMIDAL ASOCIADOS</p>
         </footer>
     </div>
 
@@ -56,59 +70,7 @@
 
         function Salir(){
             App.goToLogin();
-        }
-
-        // Closes the sidebar menu
-        $("#menu-close").click(function (e) {
-            e.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
-            //$('html,body').animate({ scrollTop: $(document).height() }, 1500);
-        });
-        //Opens the sidebar menu
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#sidebar-wrapper").toggleClass("active");
-        });
-        //#to-top button appears after scrolling
-        var fixed = false;
-        $(document).scroll(function () {
-            if ($(this).scrollTop() > 250) {
-                if (!fixed) {
-                    fixed = true;
-                     //$('#to-top').css({position:'fixed', display:'block'});
-                    $('#to-top').show("slow", function () {
-                        $('#to-top').css({
-                            position: 'fixed',
-                            display: 'block'
-                        });
-                    });
-                }
-            } else {
-                if (fixed) {
-                    fixed = false;
-                    $('#to-top').hide("slow", function () {
-                        $('#to-top').css({
-                            display: 'none'
-                        });
-                    });
-                }
-            }
-        });
-        //Scrolling functions
-        $(document).ready(function () {
-            $('#to-top').click(function () {
-                $('html,body').animate({ scrollTop: 0 }, 1500);
-            });
-        });
-        //OTRO TOGGLES
-        $("#contact").click(function (e) {
-            e.preventDefault();
-            $('html,body').animate({ scrollTop: $(document).height() }, 1500);
-        });
-        $("#acercaDe").click(function (e) {
-            e.preventDefault();
-            $('html,body').animate({ scrollTop: $(document).height() }, 1500);
-        });
+        }        
     </script>
     @RenderSection("scripts", required:=False)
 </body>
