@@ -5,9 +5,9 @@ End Code
 
 <div id="titulo" class="long-title">
     <h3>Mi Perfil</h3>
-    <div id="foto" data-bind="foreach: fotoPerfil">
-        <img style="margin-bottom: 10px" class="img-circle img-responsive bubble" id="perfil" data-bind="attr: {src: cuerpo, alt: nombre}">
-    </div>
+</div>
+<div data-bind="foreach: fotoPerfil">
+    <img style="margin-bottom: 10px" class="img-circle img-responsive bubble" id="perfil" data-bind="attr: {src: cuerpo, alt: nombre}">
 </div>
 
 <div class="container">
