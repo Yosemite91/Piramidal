@@ -44,7 +44,34 @@ Namespace Controllers.APIControllers
         End Function
 #End Region
 
+#Region "Detalle Publicacion"
+        <Route("get/{id:int}", Name:="DetallePublicacion")>
+        <HttpGet>
+        Public Async Function DetallePublicacion(id As Integer) As Task(Of IHttpActionResult)
+            Dim db As New GpcDBContext()
+            Dim result As PublicacionModel = New PublicacionModel
 
+            Try
+                Dim publicacion As Publicacion = Await db.Publicaciones.Where(Function(u) u.ID = id).SingleOrDefaultAsync()
+                result = New PublicacionModel With
+                         {
+                            .ID = publicacion.ID,
+                            .Titulo = publicacion.Titulo,
+                            .Descripcion = publicacion.Descripcion,
+                            .FechaPublicacion = publicacion.FechaPublicacion,
+                            .Foto = Encoding.Default.GetString(publicacion.Foto)
+                         }
+            Catch ex As Exception
+                Return Me.Content(HttpStatusCode.BadRequest, String.Format("Problemas para retornar publicación. Error: {0}", ex.Message))
+            Finally
+                db.Dispose()
+            End Try
+
+            If result IsNot Nothing Then Return Me.Ok(result)
+            Return Me.Content(HttpStatusCode.NotFound, "Información no encontrada")
+
+        End Function
+#End Region
 
     End Class
 End Namespace

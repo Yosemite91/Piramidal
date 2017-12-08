@@ -371,6 +371,8 @@
     </None>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Views\Publicacion\DetallePublicacion.vbhtml" />
+    <TypeScriptCompile Include="Scripts\app\Publicaciones\DetallePublicacionViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Publicaciones\IFotoPublicacion.ts" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

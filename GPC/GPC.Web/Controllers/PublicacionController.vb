@@ -8,5 +8,9 @@ Namespace Controllers
         Function CrearPublicacion() As ActionResult
             Return View()
         End Function
+
+        Function DetallePublicacion() As ActionResult
+            Return View()
+        End Function
     End Class
 End Namespace
