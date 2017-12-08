@@ -1,0 +1,12 @@
+﻿Imports System.Web.Mvc
+
+Namespace Controllers
+    Public Class PublicacionController
+        Inherits Controller
+
+
+        Function CrearPublicacion() As ActionResult
+            Return View()
+        End Function
+    End Class
+End Namespace

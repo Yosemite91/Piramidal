@@ -261,10 +261,12 @@
     <Compile Include="Controllers\APIControllers\ActividadApiController.vb" />
     <Compile Include="Controllers\APIControllers\LoginApiController.vb" />
     <Compile Include="Controllers\APIControllers\PostulacionApiController.vb" />
+    <Compile Include="Controllers\APIControllers\PublicacionApiController.vb" />
     <Compile Include="Controllers\APIControllers\UsuarioApiController.vb" />
     <Compile Include="Controllers\IndexController.vb" />
     <Compile Include="Controllers\LoginController.vb" />
     <Compile Include="Controllers\PostulacionController.vb" />
+    <Compile Include="Controllers\PublicacionController.vb" />
     <Compile Include="Controllers\UsuarioController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
@@ -275,6 +277,7 @@
     <Compile Include="Models\LoginModel.vb" />
     <Compile Include="Models\ManageViewModels.vb" />
     <Compile Include="Models\PostulacionModel.vb" />
+    <Compile Include="Models\PublicacionModel.vb" />
     <Compile Include="Models\UsuarioModel.vb" />
     <Compile Include="Modules\BasicAuthHttpModule.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -368,6 +371,7 @@
     </None>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <TypeScriptCompile Include="Scripts\app\Publicaciones\IFotoPublicacion.ts" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\cldr.js" />
@@ -440,6 +444,7 @@
     <Content Include="Views\Postulacion\CrearPostulacion.vbhtml" />
     <Content Include="Views\Postulacion\ListaPostulaciones.vbhtml" />
     <Content Include="Views\Postulacion\DetallePostulacion.vbhtml" />
+    <Content Include="Views\Publicacion\CrearPublicacion.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -480,6 +485,8 @@
     <TypeScriptCompile Include="Scripts\app\Postulaciones\DetallePostulacionViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Postulaciones\IPostulanteModel.d.ts" />
     <TypeScriptCompile Include="Scripts\app\Postulaciones\ListaPostulacionesViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\app\Publicaciones\CrearPublicacionViewModel.ts" />
+    <TypeScriptCompile Include="Scripts\app\Publicaciones\IPublicacionModel.d.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\CrearUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\DetalleUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\EditarUsuarioViewModel.ts" />
