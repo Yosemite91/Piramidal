@@ -15,7 +15,7 @@ namespace Publicaciones {
             icon: 'edit',
             onClick: function (e: any) {
                 var id = this.noticia().id;
-                window.location.assign(App.appRoot + 'Publicaciones/EditarPublicacion?id=' + id);
+                window.location.assign(App.appRoot + 'Publicacion/EditarPublicacion?id=' + id);
             }
         };
         public botonEliminar = {
@@ -37,7 +37,7 @@ namespace Publicaciones {
                 }).then(
                     function (data) {
                         DevExpress.ui.notify('Publicacion Eliminado', 'success', 3000);
-                        window.location.assign(App.appRoot + 'Publicaciones/ListaPublicaciones');
+                        window.location.assign(App.appRoot + 'Publicacion/ListaPublicaciones');
                     },
                     function (xhr, textStatus, err) {
                         alert(err);

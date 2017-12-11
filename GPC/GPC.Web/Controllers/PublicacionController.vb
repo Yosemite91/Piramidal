@@ -12,5 +12,10 @@ Namespace Controllers
         Function DetallePublicacion() As ActionResult
             Return View()
         End Function
+
+        Function ListaPublicaciones() As ActionResult
+            Return View()
+        End Function
+
     End Class
 End Namespace

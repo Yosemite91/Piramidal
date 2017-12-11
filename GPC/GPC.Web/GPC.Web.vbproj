@@ -372,6 +372,7 @@
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Views\Publicacion\DetallePublicacion.vbhtml" />
+    <Content Include="Views\Publicacion\ListaPublicaciones.vbhtml" />
     <TypeScriptCompile Include="Scripts\app\Publicaciones\DetallePublicacionViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Publicaciones\IFotoPublicacion.ts" />
     <Content Include="Scripts\bootstrap.js" />
@@ -489,6 +490,7 @@
     <TypeScriptCompile Include="Scripts\app\Postulaciones\ListaPostulacionesViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Publicaciones\CrearPublicacionViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Publicaciones\IPublicacionModel.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\Publicaciones\ListarPublicacionesViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\CrearUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\DetalleUsuarioViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Usuarios\EditarUsuarioViewModel.ts" />

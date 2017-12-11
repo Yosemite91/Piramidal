@@ -35,6 +35,7 @@
                     <li>@Html.ActionLink("Postular", "CrearPostulacion", "Postulacion")</li>
                     <li>@Html.ActionLink("Postulaciones", "ListaPostulaciones", "Postulacion")</li>
                     <li>@Html.ActionLink("Actividades", "ListaActividades", "Postulacion")</li>
+                    <li>@Html.ActionLink("Publicaciones", "ListaPublicaciones", "Publicacion")</li>
                     <li>
                         <a href="#" onClick="Salir();"> Cerrar Sesión</a>
                     </li>

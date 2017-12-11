@@ -73,5 +73,26 @@ Namespace Controllers.APIControllers
         End Function
 #End Region
 
+#Region "Lista Publicaciones"
+        <Route("get-publicaciones", Name:="getPublicaciones")>
+        <HttpGet>
+        Public Async Function GetPublicaciones() As Task(Of IHttpActionResult)
+            Dim db As New GpcDBContext()
+            Dim noticias As List(Of PublicacionModel) = Nothing
+            Try
+                noticias = Await db.Publicaciones.Select(Function(e) New PublicacionModel With {
+                                                            .ID = e.ID,
+                                                            .Titulo = e.Titulo,
+                                                            .Descripcion = e.Descripcion
+                                                            }) _
+                .ToListAsync()
+                Return Me.Ok(noticias)
+            Catch ex As Exception
+                Return Me.Content(HttpStatusCode.BadRequest, String.Format("Problemas para retornar publicaciones. Error: {0}", ex.Message))
+            Finally
+                db.Dispose()
+            End Try
+        End Function
+#End Region
     End Class
 End Namespace
