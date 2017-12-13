@@ -7,8 +7,8 @@ namespace App {
     //MODIFICAR PARA LOGIN
     export var appPrefix: string = 'GPC';        
     export var esAdministrador: boolean = localStorage.getItem(App.appPrefix + 'login.esAdministrador');
-    export var esAdminPublicacion: boolean = localStorage.getItem(App.appPrefix + 'login.esColaborador');
-    export var runEmprendedor: string  = localStorage.getItem(App.appPrefix + 'login.run');
+    export var esColaborador: boolean = localStorage.getItem(App.appPrefix + 'login.esColaborador');
+    export var run: string  = localStorage.getItem(App.appPrefix + 'login.run');
     
     $.ajaxSetup({
         headers: GetAutorizationHeaders(),

@@ -440,6 +440,7 @@
     <Content Include="Views\Postulacion\CrearPostulacion.vbhtml" />
     <Content Include="Views\Postulacion\ListaPostulaciones.vbhtml" />
     <Content Include="Views\Postulacion\DetallePostulacion.vbhtml" />
+    <Content Include="Views\Actividad\CalendarioActividades.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -468,10 +469,12 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\app\Actividades\CalendarioActividadesViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Actividades\CrearActividadViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Actividades\DetalleActividadViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Actividades\EditarActividadViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Actividades\IActividadModel.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\Actividades\ListaActividadesViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\app.ts" />
     <TypeScriptCompile Include="Scripts\app\Index\IndexViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Login\LoginModel.d.ts" />

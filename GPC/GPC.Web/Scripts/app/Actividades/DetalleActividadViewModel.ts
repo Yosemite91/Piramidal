@@ -76,7 +76,7 @@ namespace Actividades {
                 <DevExpress.ui.dxFormGroupItem>{
                     itemType: 'group',
                     caption: 'Información de Actividad',
-                    items: ['nombre', 
+                    items: ['nombre', 'descripcion',
                         <DevExpress.ui.dxFormSimpleItem>{
                             dataField: 'fechaInicio',
                             editorType: 'dxDateBox',
@@ -111,7 +111,7 @@ namespace Actividades {
                                 type: 'time',
                                 width: 'auto'
                             }
-                        },'descripcion'
+                        }
                     ]
                 }
             ]

@@ -71,34 +71,6 @@ Namespace Controllers.APIControllers
         End Function
 #End Region
 
-#Region "Lista Actividades"
-        <Route("lista", Name:="GetActividades")>
-        <HttpGet>
-        Public Async Function GetPremios() As Task(Of IHttpActionResult)
-            Dim db As New GpcDBContext
-
-
-            Dim actividades As List(Of ActividadModel) = Nothing
-
-            Try
-                actividades = Await db.Actividades _
-                           .Select(Function(u) New ActividadModel With {
-                                                               .ID = u.ID,
-                                                               .Nombre = u.Nombre,
-                                                               .Descripcion = u.Descripcion
-                                                            }) _
-                           .ToListAsync()
-
-                Return Me.Ok(actividades)
-            Catch ex As Exception
-                Return Me.Content(HttpStatusCode.BadRequest, String.Format("Problemas para retornar premios. Error: {0}", ex.Message))
-            Finally
-                db.Dispose()
-            End Try
-
-        End Function
-#End Region
-
 #Region "Editar Actividad"
         <Route("editar", Name:="Editar actividad")>
         <HttpPut>
@@ -121,6 +93,60 @@ Namespace Controllers.APIControllers
                 db.Dispose()
             End Try
             Return Me.CreatedAtRoute("Editar Actividad", New With {.ID = actividad.ID}, "Actividad Modificado exitosamente")
+        End Function
+#End Region
+
+#Region "Lista Actividades"
+        <Route("lista", Name:="GetActividades")>
+        <HttpGet>
+        Public Async Function GetPremios() As Task(Of IHttpActionResult)
+            Dim db As New GpcDBContext
+            Dim actividades As List(Of ActividadModel) = Nothing
+
+            Try
+                actividades = Await db.Actividades _
+                           .Select(Function(u) New ActividadModel With {
+                                                               .ID = u.ID,
+                                                               .Nombre = u.Nombre,
+                                                               .Descripcion = u.Descripcion,
+                                                               .FechaInicio = u.FechaInicio,
+                                                               .FechaTermino = u.FechaTermino
+                                                            }) _
+                           .ToListAsync()
+
+                Return Me.Ok(actividades)
+            Catch ex As Exception
+                Return Me.Content(HttpStatusCode.BadRequest, String.Format("Problemas para retornar premios. Error: {0}", ex.Message))
+            Finally
+                db.Dispose()
+            End Try
+
+        End Function
+#End Region
+
+#Region "Calendario Actividades"
+        <Route("calendario", Name:="GetCalendario")>
+        <HttpGet>
+        Public Async Function GetPremios2() As Task(Of IHttpActionResult)
+            Dim db As New GpcDBContext
+            Dim actividades As List(Of CalendarioModel) = Nothing
+
+            Try
+                actividades = Await db.Actividades _
+                           .Select(Function(u) New CalendarioModel With {
+                                                               .Text = u.Nombre,
+                                                               .StartDate = u.FechaInicio,
+                                                               .EndDate = u.FechaTermino
+                                                            }) _
+                           .ToListAsync()
+
+                Return Me.Ok(actividades)
+            Catch ex As Exception
+                Return Me.Content(HttpStatusCode.BadRequest, String.Format("Problemas para retornar calendario. Error: {0}", ex.Message))
+            Finally
+                db.Dispose()
+            End Try
+
         End Function
 #End Region
 

@@ -9,4 +9,10 @@
         Public Property Ubicacion As GPC.Clases.Region
     End Class
 
+    Public Class CalendarioModel
+        Public Property Text As String
+        Public Property StartDate As Date
+        Public Property EndDate As Date
+    End Class
+
 End Namespace
