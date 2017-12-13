@@ -1,6 +1,7 @@
 ﻿@Code
     ViewData("Title") = "Detalle Usuario"
 End Code
+<!-- ko if: esAdministrador === 'true' -->
 <div id="titulo" class="long-title">
     <h3>Detalle Usuario</h3>    
 </div>
@@ -29,7 +30,7 @@ End Code
         </div>
     </div>
 </div>
-
+<!-- /ko -->
 @Section Scripts
     <script src="~/Scripts/app/Usuarios/DetalleUsuarioViewModel.js"></script>
     <script>

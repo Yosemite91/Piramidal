@@ -1,6 +1,7 @@
 ﻿@Code
     ViewData("Title") = "Mi Perfil"
 End Code
+<!-- ko if: esAdministrador === 'true' || esColaborador === 'true' -->
 <div data-bind="dxPopup: popUpCambiarPass"></div>
 
 <div id="titulo" class="long-title">
@@ -20,7 +21,7 @@ End Code
         <div id="modificar-button" data-bind="dxButton: applyButtonOptionsModificarContrasena"> </div>
     </div>
 </div>
-
+<!-- /ko -->
 @Section Scripts
     <script src="~/Scripts/app/Usuarios/MiPerfilViewModel.js"></script>
     <script>

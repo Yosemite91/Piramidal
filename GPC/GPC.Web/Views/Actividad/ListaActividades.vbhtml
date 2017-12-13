@@ -1,6 +1,7 @@
 ﻿@Code
     ViewData("Title") = "ListaActividades"
 End Code
+<!-- ko if: esAdministrador === 'true' -->
 <div id="titulo" class="long-title"><h3>Actividades</h3></div>
 
 <div class="container">
@@ -20,7 +21,7 @@ End Code
         </div>
     </div>
 </div>
-
+<!-- /ko -->
 @Section Scripts
     <script src="~/Scripts/app/Actividades/ListaActividadesViewModel.js"></script>
     <script>

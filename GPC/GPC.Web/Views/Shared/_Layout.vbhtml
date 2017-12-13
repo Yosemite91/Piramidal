@@ -31,9 +31,11 @@
                     </li>
                     <!-- /ko -->
                     <!-- ko if: Token !== null -->
+                    <!-- ko if: esAdministrador === 'true' -->
                     <li>@Html.ActionLink("Usuarios", "ListaUsuarios", "Usuario")</li>                    
                     <li>@Html.ActionLink("Postulaciones", "ListaPostulaciones", "Postulacion")</li>
-                    <li>@Html.ActionLink("Actividades", "ListaActividades", "Actividad")</li>                    
+                    <li>@Html.ActionLink("Actividades", "ListaActividades", "Actividad")</li>
+                    <!-- /ko -->
                     <li>@Html.ActionLink("Mi Calendario", "CalendarioActividades", "Actividad")</li>
                     <li>@Html.ActionLink("Mi Perfil", "MiPerfil", "Usuario")</li>
                     <li> 
@@ -63,7 +65,7 @@
     @* LOGIN *@
     <script>
         esAdministrador = App.esAdministrador;
-        esAdminPublicacion = App.esAdminPublicacion;
+        esColaborador = App.esColaborador;
 
         App.apiRoot = '@Url.Content("~/")api/';
         App.appRoot = '@Url.Content("~/")';

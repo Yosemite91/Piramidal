@@ -1,7 +1,7 @@
 ﻿@Code
     ViewData("Title") = "DetalleActividad"
 End Code
-
+<!-- ko if: esAdministrador === 'true' -->
 <div id="titulo" class="long-title">
     <h3>Detalle Actividad</h3>
 </div>
@@ -25,15 +25,10 @@ End Code
         </div>
     </div>
 </div>
-
+<!-- /ko -->
 @Section Scripts
     <script src="~/Scripts/app/Actividades/DetalleActividadViewModel.js"></script>
     <script>
         ko.applyBindings(new Actividades.DetalleActividadViewModel());
     </script>
 End Section
-
-
-
-
-

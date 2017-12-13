@@ -1,7 +1,7 @@
 ﻿@Code
     ViewData("Title") = "Lista Postulaciones"
 End Code
-
+<!-- ko if: esAdministrador === 'true' -->
 <div id="titulo" class="long-title"><h3>Postulaciones</h3></div>
 
 <div class="container">
@@ -14,7 +14,7 @@ End Code
         <div id="grid" data-bind="dxDataGrid: grid"></div>
     </div>
 </div>
-
+<!-- /ko -->
 @Section Scripts
     <script src="~/Scripts/app/Postulaciones/ListaPostulacionesViewModel.js"></script>
     <script>

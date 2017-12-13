@@ -1,7 +1,7 @@
 ﻿@Code
     ViewData("Title") = "Calendario Actividades"
 End Code
-
+<!-- ko if: esAdministrador === 'true' || esColaborador === 'true' -->
 <div id="titulo" class="long-title">
     <h3>Calendario Actividades</h3>
 </div>
@@ -22,7 +22,7 @@ End Code
         </div>
     </div>
 </div>
-
+<!-- /ko -->
 @Section Scripts
     <script src="~/Scripts/app/Actividades/CalendarioActividadesViewModel.js"></script>
     <script>
