@@ -118,7 +118,6 @@ namespace Actividades {
         public fechaInicioDX: KnockoutObservable<Date> = ko.observable<Date>();
         public fechaTerminoDX: KnockoutObservable<Date> = ko.observable<Date>();
        
-
         //Estableciendo el enlace
         public loadObject: (result: IActividadModel) => void = (result: IActividadModel): void => {
             this.nombreDX(result.nombre);

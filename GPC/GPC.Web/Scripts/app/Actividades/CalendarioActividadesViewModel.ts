@@ -6,16 +6,9 @@
 namespace Actividades {
 
     export class CalendarioActividadesViewModel {
-        public actividad: KnockoutObservable<IActividadModel> = ko.observable<IActividadModel>({
-            id: null,
-            nombre: null,
-            descripcion: null,
-            fechaInicio: null,
-            fechaTermino: null,
-            ubicacion: null
-        });
+        public actividad: KnockoutObservable<any> = ko.observable<any>();
+        public actividad2: KnockoutObservableArray<IActividadModel> = ko.observableArray<IActividadModel>();
 
-        //Buttons
         public goBack = {
             icon: 'back',
             type: 'normal',
@@ -25,13 +18,15 @@ namespace Actividades {
         };
 
         public calendario = <DevExpress.ui.dxSchedulerOptions>{
-            dataSource: this.actividad(),
+            dataSource: this.actividad2,            
+            views: ["day", "week", "month"],
             currentView: "month",
             currentDate: new Date(),
             crossScrollingEnabled: false,
             endDayHour: 24,
-            startDayHour: 7,
+            startDayHour: 1,
             firstDayOfWeek: 1,
+            showAllDayPanel: false,
             editing: {
                 allowAdding: false,
                 allowDeleting: false,
@@ -42,16 +37,16 @@ namespace Actividades {
         }
 
         public loading: KnockoutObservable<boolean> = ko.observable(false);
+
         constructor() {
-            this.actividad().id = parseInt(window.location.search.replace('?id=', ''));
 
             this.loading(true);
-            $.getJSON(App.apiRoot + 'actividades/lista/' + this.actividad().id).then((result: IActividadModel): void => {
-                this.actividad(result);
-                $('#scheduler-demo').dxForm('instance').repaint();
+            $.getJSON(App.apiRoot + 'actividades/calendario/').then((result: IActividadModel[]): void => {
+                this.actividad2(result);
+                this.calendario.dataSource = result;
+                //$('#scheduler-demo').dxScheduler('instance').repaint;
                 this.loading(false);
             });
-
         }
     }
 }

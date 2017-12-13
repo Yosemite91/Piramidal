@@ -474,6 +474,7 @@
     <TypeScriptCompile Include="Scripts\app\Actividades\DetalleActividadViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Actividades\EditarActividadViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Actividades\IActividadModel.d.ts" />
+    <TypeScriptCompile Include="Scripts\app\Actividades\ListaActividadesViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\app.ts" />
     <TypeScriptCompile Include="Scripts\app\Index\IndexViewModel.ts" />
     <TypeScriptCompile Include="Scripts\app\Login\LoginModel.d.ts" />
