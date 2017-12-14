@@ -1,7 +1,7 @@
 ﻿@Code
     ViewData("Title") = "Modificar Usuario"
 End Code
-
+<!-- ko if: esAdministrador === 'true' || esColaborador === 'true'-->
 <div data-bind="dxPopup: popUpModificar"></div>
 <div data-bind="dxPopup: popUpCancelar"></div>
 <div id="titulo" class="long-title"><h3>Modificar Usuario</h3></div>
@@ -70,7 +70,7 @@ End Code
                         <div data-bind="dxSelectBox: dxAsociado, dxValidator: validatorOptions"></div>
                     </div>
                 </div>
-
+                <!-- ko if: esAdministrador === 'true' -->
                 <br />
                 <div class="dx-fieldset-header">Privilegios Otorgables</div>
 
@@ -87,7 +87,7 @@ End Code
                         <div data-bind="dxSwitch: dxEsColaborador"></div>
                     </div>
                 </div>
-
+                <!-- /ko -->
                 @* NO EDITABLE DE PREFERENCIA *@
                 <div class="dx-field" style="display: none">
                     <div class="dx-field-label">¿Es Activo?</div>
@@ -115,7 +115,7 @@ End Code
         </div>
     </div>
 </div>
-
+<!-- /ko -->
 @Section Scripts
     <script src="~/Scripts/app/Usuarios/EditarUsuarioViewModel.js"></script>
     <script>

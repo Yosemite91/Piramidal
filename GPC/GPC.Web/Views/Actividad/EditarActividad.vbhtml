@@ -1,7 +1,7 @@
 ﻿@Code
     ViewData("Title") = "Modificar Actividad"
 End Code
-
+<!-- ko if: esAdministrador === 'true' -->
 <div data-bind="dxPopup: popUpModificar"></div>
 <div data-bind="dxPopup: popUpCancelar"></div>
 <div id="titulo" class="long-title"><h3>Modificar Actividad</h3></div>
@@ -54,7 +54,7 @@ End Code
         </div>
     </div>
 </div>
-
+<!-- /ko -->
 @Section Scripts
     <script src="~/Scripts/app/Actividades/EditarActividadViewModel.js"></script>
     <script>

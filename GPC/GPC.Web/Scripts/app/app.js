@@ -5,8 +5,8 @@ var App;
     //MODIFICAR PARA LOGIN
     App.appPrefix = 'GPC';
     App.esAdministrador = localStorage.getItem(App.appPrefix + 'login.esAdministrador');
-    App.esAdminPublicacion = localStorage.getItem(App.appPrefix + 'login.esColaborador');
-    App.runEmprendedor = localStorage.getItem(App.appPrefix + 'login.run');
+    App.esColaborador = localStorage.getItem(App.appPrefix + 'login.esColaborador');
+    App.run = localStorage.getItem(App.appPrefix + 'login.run');
     $.ajaxSetup({
         headers: GetAutorizationHeaders(),
         error: function (jqXHR, textStatus, errorThrown) {
@@ -55,3 +55,4 @@ var App;
     }
     App.alertaFormulario = alertaFormulario;
 })(App || (App = {}));
+//# sourceMappingURL=app.js.map

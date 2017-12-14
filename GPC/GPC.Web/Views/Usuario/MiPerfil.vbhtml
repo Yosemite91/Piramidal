@@ -1,13 +1,14 @@
 ﻿@Code
     ViewData("Title") = "Mi Perfil"
 End Code
+<!-- ko if: esAdministrador === 'true' || esColaborador === 'true' -->
 <div data-bind="dxPopup: popUpCambiarPass"></div>
 
 <div id="titulo" class="long-title">
     <h3>Mi Perfil</h3>
-    <div id="foto" data-bind="foreach: fotoPerfil">
-        <img style="margin-bottom: 10px" class="img-circle img-responsive bubble" id="perfil" data-bind="attr: {src: cuerpo, alt: nombre}">
-    </div>
+</div>
+<div data-bind="foreach: fotoPerfil">
+    <img style="margin-bottom: 10px" class="img-circle img-responsive bubble" id="perfil" data-bind="attr: {src: cuerpo, alt: nombre}">
 </div>
 
 <div class="container">
@@ -20,7 +21,7 @@ End Code
         <div id="modificar-button" data-bind="dxButton: applyButtonOptionsModificarContrasena"> </div>
     </div>
 </div>
-
+<!-- /ko -->
 @Section Scripts
     <script src="~/Scripts/app/Usuarios/MiPerfilViewModel.js"></script>
     <script>

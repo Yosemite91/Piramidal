@@ -15,7 +15,7 @@ namespace Actividades {
             icon: 'plus',
             type: 'success',
             onClick: function (e: any) {
-                let url: string = App.appRoot + 'Usuario/CrearUsuario';
+                let url: string = App.appRoot + 'Actividad/CrearActividad';
                 window.location.assign(url);
             }
         };

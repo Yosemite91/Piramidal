@@ -49,7 +49,27 @@ namespace Postulaciones {
             type: 'success',
             onClick: (e: any): void => {
                 DevExpress.ui.notify('Postulante Aceptado', 'success', 3000);
-                window.location.assign(App.appRoot + 'Usuario/CrearUsuario');
+
+                var run = this.usuario().run;
+
+                $.ajax({
+                    url: App.apiRoot + 'postulaciones/' + run,
+                    cache: false,
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json'
+                }).then(
+                    function (data) {
+                        DevExpress.ui.notify('Postulación Rechazada', 'success', 3000);
+                    },
+                    function (xhr, textStatus, err) {
+                        alert(err);
+                    }
+                    ).done(function () {
+                        window.location.assign(App.appRoot + 'Usuario/CrearUsuario');
+                    });
+
+                //window.location.assign(App.appRoot + 'Usuario/CrearUsuario');
             }
         };
         public goBack = {
