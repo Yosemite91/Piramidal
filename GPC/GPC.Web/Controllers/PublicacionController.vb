@@ -17,5 +17,8 @@ Namespace Controllers
             Return View()
         End Function
 
+        Function EditarPublicacion() As ActionResult
+            Return View()
+        End Function
     End Class
 End Namespace

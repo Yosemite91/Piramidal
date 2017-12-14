@@ -14,7 +14,7 @@ namespace Publicaciones {
             type: 'default',
             icon: 'edit',
             onClick: function (e: any) {
-                var id = this.noticia().id;
+                var id = this.publicacion().id;
                 window.location.assign(App.appRoot + 'Publicacion/EditarPublicacion?id=' + id);
             }
         };
