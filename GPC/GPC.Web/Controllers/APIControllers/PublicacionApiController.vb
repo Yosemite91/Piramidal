@@ -117,5 +117,25 @@ Namespace Controllers.APIControllers
             Return Me.CreatedAtRoute("editarPublicacion", New With {.ID = publicacion.ID}, "Publicacion  Modificado exitosamente")
         End Function
 #End Region
+
+#Region "Eliminar Publicacion"
+        <Route("eliminar", Name:="eliminarPublicacion")>
+        <HttpPut>
+        Public Async Function EliminarPublicacion(<FromBody> model As PublicacionModel) As Task(Of IHttpActionResult)
+            Dim db As New GpcDBContext()
+            Dim publicacion As New Publicacion
+            Try
+                publicacion = db.Publicaciones.Find(model.ID)
+
+                db.Publicaciones.Remove(publicacion)
+                db.SaveChanges()
+            Catch ex As Exception
+                Return Me.Content(HttpStatusCode.BadRequest, String.Format("Problemas para deshabilitar la noticia. Error: {0}", ex.Message))
+            Finally
+                db.Dispose()
+            End Try
+            Return Me.CreatedAtRoute("eliminarPublicacion", New With {.ID = publicacion.ID}, "Publicacion Eliminada")
+        End Function
+#End Region
     End Class
 End Namespace

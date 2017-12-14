@@ -23,10 +23,10 @@ namespace Publicaciones {
             type: 'danger',
             icon: 'close',
             onClick: function (e: any) {
-                var NoticiaDTO = {
-                    id: this.noticia().id,
+                var PublicacionDTO = {
+                    id: this.publicacion().id,
                 };
-                var info = JSON.stringify(NoticiaDTO);
+                var info = JSON.stringify(PublicacionDTO);
                 $.ajax({
                     url: App.apiRoot + 'publicaciones/eliminar/',
                     cache: false,
@@ -38,10 +38,10 @@ namespace Publicaciones {
                     function (data) {
                         DevExpress.ui.notify('Publicacion Eliminado', 'success', 3000);
                         window.location.assign(App.appRoot + 'Publicacion/ListaPublicaciones');
-                    },
-                    function (xhr, textStatus, err) {
-                        alert(err);
-                    });
+                    },function (xhr, textStatus, err) {
+                        alert(err)
+                    }
+                );
             }
         };
         public goBack = {
