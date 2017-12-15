@@ -53,7 +53,28 @@ End Code
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1 text-center">
-                
+                <h2>Noticias</h2>
+                <br class="small">
+                <div class="row">
+                    @* dxList *@
+                    <div id="list" class="list-container">
+                        <div data-bind="dxList: listOptions">
+                            <div data-options="dxTemplate: {name: 'item'}">
+                                <div class="product" style="display: block">
+                                    <h4 data-bind="text: $data.titulo"></h4>
+                                    <img id="imgList" data-bind="attr: {src: $data.foto}" />
+                                    <br />
+                                    @*<div data-bind="text: $data.descripcion"></div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @* dxList *@
+                </div>
+                <!-- /.row (nested) -->
+                @*<div class="btn btn-lg btn-default" style="margin-top: 15px; border-radius: 0px">
+                    <a>@Html.ActionLink("Ver más noticias", "ListaPublicacionNoticias", "PublicacionNoticias")</a>
+                </div>*@
             </div>
             <!-- /.col-lg-10 -->
         </div>
