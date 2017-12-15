@@ -43,8 +43,10 @@
             <li>@Html.ActionLink("Postulaciones", "ListaPostulaciones", "Postulacion")</li>
             <li>@Html.ActionLink("Actividades", "ListaActividades", "Actividad")</li>
             <li>@Html.ActionLink("Publicaciones", "ListaPublicaciones", "Publicacion")</li>
+            <!-- ko if: esAdministrador === 'true' || esColaborador === 'true' -->
             <li>@Html.ActionLink("Mi Calendario", "CalendarioActividades", "Actividad")</li>
             <li>@Html.ActionLink("Mi Perfil", "MiPerfil", "Usuario")</li>
+            <!-- /ko -->
             <li>
                 <a href="#" onClick="Salir();"> Cerrar Sesión</a>
             </li>
