@@ -17,9 +17,13 @@ namespace Actividades {
             }
         };
 
-        public calendario = <DevExpress.ui.dxSchedulerOptions>{
-            dataSource: this.actividad2,            
-            views: ["day", "week", "month"],
+        public calendario = <any>{
+            dataSource: this.actividad2,
+            views: [
+                { name: "Día", type: "day" },
+                { name: "Semana", type: "week" },
+                { name: "Mes", type: "month" }
+            ],
             currentView: "month",
             currentDate: new Date(),
             crossScrollingEnabled: false,
@@ -37,6 +41,7 @@ namespace Actividades {
         }
 
         public loading: KnockoutObservable<boolean> = ko.observable(false);
+        public editar: KnockoutObservable<any> = ko.observable(true);
 
         constructor() {
 

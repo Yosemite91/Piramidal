@@ -159,7 +159,7 @@
     }
 }
 #elVato{
-    margin-top: 7%;
+    margin-top: 3%;
     width: 100%;
     max-width: 530px;
     padding: 20px;
@@ -572,3 +572,8 @@ footer {
     }
 }
 
+/* EDITANDO POPUP FECHA ACTIVIDAD */
+.dx-popup-content{
+    padding-top: -20px;
+    padding-bottom: -20px;
+}

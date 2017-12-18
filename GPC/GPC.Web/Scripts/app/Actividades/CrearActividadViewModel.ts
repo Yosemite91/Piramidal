@@ -158,7 +158,7 @@ namespace Actividades {
             }
         }
         public dxFechaInicio = {
-            min: new Date(),
+            min: new Date(2000, 1, 1),
             width: 'auto',
             type: "datetime",
             editorOptions: {
