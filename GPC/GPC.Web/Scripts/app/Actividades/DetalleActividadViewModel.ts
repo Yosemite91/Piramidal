@@ -26,32 +26,7 @@ namespace Actividades {
             }
         };
 
-        public botonBloquear = {
-            text: 'Bloquear',
-            type: 'danger',
-            icon: 'close',
-            onClick: function (e: any) {
-                var UsuarioDTO = {
-                    //run: this.usuario().run
-                };
-                var info = JSON.stringify(UsuarioDTO);
-                $.ajax({
-                    url: App.apiRoot + 'usuarios/bloquear/',
-                    cache: false,
-                    type: 'PUT',
-                    contentType: 'application/json; charset=utf-8',
-                    data: info,
-                    dataType: 'json'
-                }).then(
-                    function (data) {
-                        DevExpress.ui.notify('Usuario Bloqueado', 'success', 3000);
-                        window.location.assign(App.appRoot + 'Usuario/ListaUsuarios');
-                    },
-                    function (xhr, textStatus, err) {
-                        alert(err);
-                    });
-            }
-        };
+    
               
         public goBack = {
             icon: 'back',

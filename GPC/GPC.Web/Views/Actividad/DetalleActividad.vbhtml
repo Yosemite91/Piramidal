@@ -18,7 +18,6 @@ End Code
             <div id="actividad-form" data-bind="dxForm: form"></div>
 
             <div class="row">
-                <div id="bloquear-button" data-bind="dxButton: botonBloquear"> </div>
                 <div id="modificar-button" data-bind="dxButton: applyButtonOptionsModificar"> </div>
             </div>
 
