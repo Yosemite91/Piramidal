@@ -2,10 +2,7 @@
     ViewData("Title") = "Detalle Publicación"
 End Code
 <div id="titulo" class="long-title">
-    <h3>Detalle de la Publicación</h3>
-    <div data-bind="foreach: fotoPerfil">
-        <img style="margin-bottom: 10px" class="mg-circle img-responsive bubble" id="perfilNoticia" data-bind="attr: {src: cuerpo, alt: nombre}">
-    </div>
+    <h3>Detalle de la Publicación</h3>    
 </div>
 
 <div class="container">
@@ -26,6 +23,10 @@ End Code
             </div>
         </div>
         <!-- /ko -->
+
+        <div data-bind="foreach: fotoPerfil">
+            <img style="margin-bottom: 10px" class="mg-circle img-responsive bubble" id="perfilNoticia" data-bind="attr: {src: cuerpo, alt: nombre}">
+        </div>
     </div>
 </div>
 
