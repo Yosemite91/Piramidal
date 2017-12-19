@@ -79,6 +79,10 @@
       <DependentUpon>201711242041087_initial.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201711242041087_initial.vb" />
+    <Compile Include="Migrations\201712191626091_token.Designer.vb">
+      <DependentUpon>201712191626091_token.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712191626091_token.vb" />
     <Compile Include="Migrations\Configuration.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -99,6 +103,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711242041087_initial.resx">
       <DependentUpon>201711242041087_initial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712191626091_token.resx">
+      <DependentUpon>201712191626091_token.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

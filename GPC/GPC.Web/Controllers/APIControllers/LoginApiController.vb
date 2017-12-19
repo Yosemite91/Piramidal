@@ -39,6 +39,7 @@ Namespace Controllers.APIControllers
                 Dim entity As Token = db.Token.Create()
                 entity.UsuarioID = user.ID
                 entity.Run = user.Run
+                entity.Ubicacion = user.Ubicacion
                 entity.TokenActual = tokenActual
                 entity.Fecha = Now()
                 db.Token.Add(entity)
@@ -47,7 +48,8 @@ Namespace Controllers.APIControllers
                                     .Run = user.Run,
                                     .Token = Modules.BasicAuthHttpModule.Encode(user.ID, tokenActual),
                                     .EsAdministrador = user.EsAdministrador,
-                                    .EsColaborador = user.EsColaborador
+                                    .EsColaborador = user.EsColaborador,
+                                    .Ubicacion = user.Ubicacion
                                 })
             Catch ex As Exception
                 Return Me.Content(HttpStatusCode.BadRequest, ex.Message())

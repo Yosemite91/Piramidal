@@ -40,6 +40,7 @@ namespace Login {
                         localStorage.setItem(App.appPrefix + 'login.run', result.run);
                         localStorage.setItem(App.appPrefix + 'login.esAdministrador', result.esAdministrador);
                         localStorage.setItem(App.appPrefix + 'login.esColaborador', result.esColaborador);
+                        localStorage.setItem(App.appPrefix + 'login.ubicacion', result.ubicacion);
 
                         if (result) {
                             let url: string = App.appRoot + 'Usuario/MiPerfil';                            
