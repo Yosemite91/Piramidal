@@ -11,6 +11,7 @@
 
     Public Class CalendarioModel
         Public Property Text As String
+        Public Property Descripcion As String
         Public Property StartDate As Date
         Public Property EndDate As Date
     End Class

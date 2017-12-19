@@ -125,14 +125,15 @@ Namespace Controllers.APIControllers
 #End Region
 
 #Region "Calendario Actividades"
-        <Route("calendario", Name:="GetCalendario")>
+        <Route("calendario/{ubi:int}", Name:="GetCalendario")>
         <HttpGet>
-        Public Async Function GetPremios2() As Task(Of IHttpActionResult)
+        Public Async Function GetPremios2(ubi As Integer) As Task(Of IHttpActionResult)
             Dim db As New GpcDBContext
             Dim actividades As List(Of CalendarioModel) = Nothing
 
             Try
                 actividades = Await db.Actividades _
+                           .Where(Function(u) u.Ubicacion = ubi) _
                            .Select(Function(u) New CalendarioModel With {
                                                                .Text = u.Nombre,
                                                                .StartDate = u.FechaInicio,

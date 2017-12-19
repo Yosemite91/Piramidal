@@ -7,6 +7,7 @@ var App;
     App.esAdministrador = localStorage.getItem(App.appPrefix + 'login.esAdministrador');
     App.esColaborador = localStorage.getItem(App.appPrefix + 'login.esColaborador');
     App.run = localStorage.getItem(App.appPrefix + 'login.run');
+    App.ubicacion = localStorage.getItem(App.appPrefix + 'login.ubicacion');
     $.ajaxSetup({
         headers: GetAutorizationHeaders(),
         error: function (jqXHR, textStatus, errorThrown) {
@@ -27,6 +28,7 @@ var App;
         localStorage.removeItem(App.appPrefix + 'login.esColaborador');
         localStorage.removeItem(App.appPrefix + 'login.token');
         localStorage.removeItem(App.appPrefix + 'login.run');
+        localStorage.removeItem(App.appPrefix + 'login.ubicacion');
         var urlLogin = 'http://' + window.location.host + App.apiRoot.replace('/api/', '/');
         window.location.href = urlLogin;
         return false;

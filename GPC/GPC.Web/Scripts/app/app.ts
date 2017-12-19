@@ -8,7 +8,8 @@ namespace App {
     export var appPrefix: string = 'GPC';        
     export var esAdministrador: boolean = localStorage.getItem(App.appPrefix + 'login.esAdministrador');
     export var esColaborador: boolean = localStorage.getItem(App.appPrefix + 'login.esColaborador');
-    export var run: string  = localStorage.getItem(App.appPrefix + 'login.run');
+    export var run: string = localStorage.getItem(App.appPrefix + 'login.run');
+    export var ubicacion: number = localStorage.getItem(App.appPrefix + 'login.ubicacion');
     
     $.ajaxSetup({
         headers: GetAutorizationHeaders(),
@@ -31,6 +32,7 @@ namespace App {
         localStorage.removeItem(appPrefix + 'login.esColaborador');
         localStorage.removeItem(appPrefix + 'login.token');
         localStorage.removeItem(appPrefix + 'login.run');
+        localStorage.removeItem(appPrefix + 'login.ubicacion');
         let urlLogin: string = 'http://' + window.location.host + App.apiRoot.replace('/api/', '/');
         window.location.href = urlLogin;
         return false;

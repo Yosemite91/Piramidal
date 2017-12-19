@@ -46,7 +46,8 @@ namespace Actividades {
         constructor() {
 
             this.loading(true);
-            $.getJSON(App.apiRoot + 'actividades/calendario/').then((result: IActividadModel[]): void => {
+            const ubicacion: number = App.ubicacion;
+            $.getJSON(App.apiRoot + 'actividades/calendario/'+ ubicacion).then((result: IActividadModel[]): void => {
                 this.actividad2(result);
                 this.calendario.dataSource = result;
                 //$('#scheduler-demo').dxScheduler('instance').repaint;
