@@ -115,6 +115,7 @@ namespace Actividades {
         //Declaración de observables
         public nombreDX: KnockoutObservable<string> = ko.observable<string>();
         public descripcionDX: KnockoutObservable<string> = ko.observable<string>();
+        public ubicacionDX: KnockoutObservable<number> = ko.observable<number>();
         public fechaInicioDX: KnockoutObservable<Date> = ko.observable<Date>();
         public fechaTerminoDX: KnockoutObservable<Date> = ko.observable<Date>();
        
@@ -122,6 +123,7 @@ namespace Actividades {
         public loadObject: (result: IActividadModel) => void = (result: IActividadModel): void => {
             this.nombreDX(result.nombre);
             this.descripcionDX(result.descripcion);
+            this.ubicacionDX(result.ubicacion);
             this.fechaInicioDX(result.fechaInicio);
             this.fechaTerminoDX(result.fechaTermino);
         }
@@ -198,7 +200,39 @@ namespace Actividades {
                 this.actividad().fechaTermino = new Date(e.value);
             }
         }      
-
+        public dxUbicacion = <DevExpress.ui.dxSelectBoxOptions>{
+            dataSource: [
+                { region: "Metropolitana", numero: 0 },
+                { region: "Tarapacá", numero: 1 },
+                { region: "Antofagasta", numero: 2 },
+                { region: "Atacama", numero: 3 },
+                { region: "Coquimbo", numero: 4 },
+                { region: "Valparaíso", numero: 5 },
+                { region: "O'Higgins", numero: 6 },
+                { region: "Maule", numero: 7 },
+                { region: "Bío Bío", numero: 8 },
+                { region: "La Araucanía", numero: 9 },
+                { region: "Los Ríos", numero: 10 },
+                { region: "Los Lagos", numero: 11 },
+                { region: "Aysen", numero: 12 },
+                { region: "Magallanes Antártica", numero: 13 },
+                { region: "Arica y Parinacota", numero: 14 }
+            ],
+            valueExpr: "numero",
+            displayExpr: "region",
+            placeholder: "Seleccione región",
+            value: this.ubicacionDX,
+            validationRules: [{
+                type: 'required',
+                message: 'Seleccione región'
+            }],
+            onValueChanged: (e: any) => {
+                this.actividad().ubicacion = e.value;
+            }
+            //onSelectionChanged: (e: any) => {
+            //    this.usuario().ubicacion = e.selectedItem;
+            //}
+        }
         public loading: KnockoutObservable<boolean> = ko.observable(false);
         public esNuevo: KnockoutObservable<boolean> = ko.observable(false);
 

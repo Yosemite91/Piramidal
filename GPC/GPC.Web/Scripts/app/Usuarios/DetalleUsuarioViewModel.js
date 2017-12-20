@@ -140,7 +140,13 @@ var Usuarios;
                                     displayFormat: 'dd/MM/yyyy',
                                     width: 'auto'
                                 }
-                            }, 'email', 'ubicacion', 'asociado'
+                            }, 'email', {
+                                dataField: 'ubicacionStr',
+                                label: { text: 'Ubicación' }
+                            }, {
+                                dataField: 'asociadoStr',
+                                label: { text: 'Asociado' }
+                            }
                         ]
                     },
                     {

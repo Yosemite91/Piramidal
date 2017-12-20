@@ -10,10 +10,9 @@ End Code
     <div data-bind="dxLoadPanel: { visible: loading }"></div>
     <div id="customPadding">
         <div class="row">
-            @* INFORMACIÓN USUARIO *@
-            <div class="dx-fieldset">
-                <div class="dx-fieldset-header">Información de la actividad</div>
-
+            @* INFORMACIÓN ACTIVIDAD *@
+            <div class="dx-fieldset-header">Información de la actividad</div>
+            <div class="col-sm-6">
                 <div class="dx-field">
                     <div class="dx-field-label">Nombre</div>
                     <div class="dx-field-value">
@@ -26,8 +25,9 @@ End Code
                     <div class="dx-field-value">
                         <div data-bind="dxTextBox: dxDescripcion, dxValidator: validatorOptions"></div>
                     </div>
-                </div>              
-
+                </div>
+            </div>
+            <div class="col-sm-6">
                 <div class="dx-field">
                     <div class="dx-field-label">Fecha Inicio</div>
                     <div class="dx-field-value">
@@ -47,10 +47,10 @@ End Code
                     <div class="dx-field-value">
                         <div data-bind="dxSelectBox: dxUbicacion, dxValidator: validatorOptions"></div>
                     </div>
-                </div>                                
+                </div>
             </div>
         </div>
-
+        <br>
         <div class="row">
             <div id="botonesDetalle">
                 <div id="solicitar-button" data-bind="dxButton: botonCancelar"> </div>

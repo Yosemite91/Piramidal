@@ -85,6 +85,7 @@ Namespace Controllers.APIControllers
                     .Descripcion = model.Descripcion
                     .FechaInicio = model.FechaInicio
                     .FechaTermino = model.FechaTermino
+                    .Ubicacion = model.Ubicacion
                 End With
                 Await db.SaveChangesAsync()
             Catch ex As Exception

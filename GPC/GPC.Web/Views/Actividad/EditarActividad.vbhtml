@@ -12,11 +12,11 @@ End Code
 
         <div class="row">
             @* INFORMACIÓN USUARIO *@
-            <div class="dx-fieldset">
+            
                 <div class="dx-fieldset-header">Información de la actividad</div>
-
+            <div class="col-sm-6">
                 @* NO EDITABLE, CONFLICTOS EN BD *@
-               <div class="dx-field">
+                <div class="dx-field">
                     <div class="dx-field-label">Nombre</div>
                     <div class="dx-field-value">
                         <div data-bind="dxTextBox: dxNombre, dxValidator: validatorOptions"></div>
@@ -29,8 +29,9 @@ End Code
                         <div data-bind="dxTextBox: dxDescripcion, dxValidator: validatorOptions"></div>
                     </div>
                 </div>
-
-               <div class="dx-field">
+              </div>
+            <div class="col-sm-6">
+                <div class="dx-field">
                     <div class="dx-field-label">Fecha Inicio</div>
                     <div class="dx-field-value">
                         <div data-bind="dxDateBox: dxFechaInicio, dxValidator: validatorOptions"></div>
@@ -43,8 +44,15 @@ End Code
                         <div data-bind="dxDateBox: dxFechaTermino, dxValidator: validatorOptions"></div>
                     </div>
                 </div>
+
+                <div class="dx-field">
+                    <div class="dx-field-label">Ubicación</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxSelectBox: dxUbicacion, dxValidator: validatorOptions"></div>
+                    </div>
+                </div>
+             </div>
             </div>
-        </div>
 
         <div class="row">
             <div id="botonesDetalle">

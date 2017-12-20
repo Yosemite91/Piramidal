@@ -150,7 +150,13 @@ namespace Usuarios {
                                 displayFormat: 'dd/MM/yyyy',
                                 width: 'auto'
                             }
-                        }, 'email', 'ubicacion', 'asociado'
+                        }, 'email', <DevExpress.ui.dxFormSimpleItem>{
+                            dataField: 'ubicacionStr',
+                            label: { text: 'Ubicación' }
+                        }, <DevExpress.ui.dxFormSimpleItem>{
+                            dataField: 'asociadoStr',
+                            label: { text: 'Asociado' }
+                        }
                     ]
                 },
                 <DevExpress.ui.dxFormGroupItem>{

@@ -77,6 +77,46 @@ Namespace Controllers.APIControllers
                     .Ubicacion = user.Ubicacion,
                     .Foto = Encoding.Default.GetString(user.Foto)
                 }
+
+                Select Case result.Ubicacion
+                    Case 0
+                        result.UbicacionStr = "Metropolitana"
+                    Case 1
+                        result.UbicacionStr = "Tarapaca"
+                    Case 2
+                        result.UbicacionStr = "Antofagasta"
+                    Case 3
+                        result.UbicacionStr = "Atacama"
+                    Case 4
+                        result.UbicacionStr = "Coquimbo"
+                    Case 5
+                        result.UbicacionStr = "Valparaiso"
+                    Case 6
+                        result.UbicacionStr = "Ohiggins"
+                    Case 7
+                        result.UbicacionStr = "Maule"
+                    Case 8
+                        result.UbicacionStr = "BioBio"
+                    Case 9
+                        result.UbicacionStr = "Araucania"
+                    Case 10
+                        result.UbicacionStr = "LosRios"
+                    Case 11
+                        result.UbicacionStr = "LosLagos"
+                    Case 12
+                        result.UbicacionStr = "Aysen"
+                    Case 13
+                        result.UbicacionStr = "MagallanesAntartica"
+                    Case 14
+                        result.UbicacionStr = "AricaParinacota"
+                End Select
+
+                Select Case result.Asociado
+                    Case 0
+                        result.AsociadoStr = "ParfumDeParfum"
+                    Case 1
+                        result.AsociadoStr = "JMOceanAvenue"
+                End Select
             Catch ex As Exception
                 Return Me.Content(HttpStatusCode.BadRequest, String.Format("Problemas para retornar usuario. Error: {0}", ex.Message))
             Finally
