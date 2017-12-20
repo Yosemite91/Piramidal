@@ -11,10 +11,12 @@
         fechaNacimiento: Date,
         foto: string,
         ubicacion: number,
+        ubicacionStr: string,
         esActivo: boolean,
         esAdministrador: boolean,
         esColaborador: boolean,
         asociado: number,
+        asociadoStr: string,
         anioIngreso: Date
 //        puntaje: number      
     }

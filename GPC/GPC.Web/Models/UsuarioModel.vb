@@ -14,10 +14,12 @@ Namespace Models
         Public Property Foto As String
         Public Property FotoByte As Byte()
         Public Property Ubicacion As Integer
+        Public Property UbicacionStr As String
         Public Property EsActivo As Boolean
         Public Property EsAdministrador As Boolean
         Public Property EsColaborador As Boolean
         Public Property Asociado As Integer
+        Public Property AsociadoStr As String
         Public Property AnioIngreso As Date
     End Class
 

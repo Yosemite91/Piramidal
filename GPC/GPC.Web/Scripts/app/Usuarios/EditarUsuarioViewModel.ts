@@ -17,12 +17,14 @@ namespace Usuarios {
             fechaNacimiento: null,
             foto: null,
             ubicacion: null,
+            ubicacionStr: null,
             esActivo: false,
             esAdministrador: false,
             esColaborador: false,
             asociado: null,
+            asociadoStr: null,
             anioIngreso: null
-//        puntaje: null
+//          puntaje: null
         });
 
         //PopUp
