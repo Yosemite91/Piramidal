@@ -12,7 +12,8 @@ namespace Actividades {
             descripcion: null,
             fechaInicio: null,
             fechaTermino: null,
-            ubicacion: null
+            ubicacion: null,
+            ubicacionStr: null
         });
 
         //Buttons
@@ -86,6 +87,9 @@ namespace Actividades {
                                 type: 'time',
                                 width: 'auto'
                             }
+                        }, <DevExpress.ui.dxFormSimpleItem>{
+                            dataField: 'ubicacionStr',
+                            label: { text: 'Ubicación' }
                         }
                     ]
                 }

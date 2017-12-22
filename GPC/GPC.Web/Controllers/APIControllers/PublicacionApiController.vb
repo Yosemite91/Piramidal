@@ -4,7 +4,6 @@ Imports System.Threading.Tasks
 Imports System.Web.Http
 Imports GPC.Data
 Imports GPC.Clases
-Imports AutoMapper.QueryableExtensions
 Imports GPC.Web.Models
 
 Namespace Controllers.APIControllers
@@ -154,7 +153,7 @@ Namespace Controllers.APIControllers
 #Region "Eliminar Publicacion"
         <Route("eliminar", Name:="eliminarPublicacion")>
         <HttpPut>
-        Public Async Function EliminarPublicacion(<FromBody> model As PublicacionModel) As Task(Of IHttpActionResult)
+        Public Function EliminarPublicacion(<FromBody> model As PublicacionModel) As IHttpActionResult
             Dim db As New GpcDBContext()
             Dim publicacion As New Publicacion
             Try

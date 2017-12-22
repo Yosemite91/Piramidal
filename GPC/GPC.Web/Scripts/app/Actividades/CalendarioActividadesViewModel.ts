@@ -20,8 +20,6 @@ namespace Actividades {
         public calendario = <any>{
             dataSource: this.actividad2,
             views: [
-                { name: "Día", type: "day" },
-                { name: "Semana", type: "week" },
                 { name: "Mes", type: "month" }
             ],
             currentView: "month",

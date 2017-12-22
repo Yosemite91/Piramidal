@@ -6,6 +6,7 @@
         descripcion: string,
         fechaInicio: Date,
         fechaTermino: Date,
-        ubicacion: number      
+        ubicacion: number,
+        ubicacionStr: string
     }
 }

@@ -12,7 +12,8 @@ namespace Actividades {
             descripcion: null,
             fechaInicio: null,
             fechaTermino: null,
-            ubicacion: null
+            ubicacion: null,
+            ubicacionStr: null
         });
 
         //PopUp

@@ -7,6 +7,8 @@
         Public Property FechaInicio As Date
         Public Property FechaTermino As Date
         Public Property Ubicacion As GPC.Clases.Region
+        Public Property UbicacionStr As String
+
     End Class
 
     Public Class CalendarioModel
