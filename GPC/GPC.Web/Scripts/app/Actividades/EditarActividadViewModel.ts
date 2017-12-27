@@ -41,7 +41,8 @@ namespace Actividades {
                         nombre: this.actividad().nombre,
                         descripcion: this.actividad().descripcion,
                         fechaInicio: this.actividad().fechaInicio,
-                        fechaTermino: this.actividad().fechaTermino
+                        fechaTermino: this.actividad().fechaTermino,
+                        ubicacion: this.actividad().ubicacion
                     };
                     var info = JSON.stringify(ActividadDTO);
 

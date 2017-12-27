@@ -213,3 +213,4 @@ var Usuarios;
     }());
     Usuarios.DetalleUsuarioViewModel = DetalleUsuarioViewModel;
 })(Usuarios || (Usuarios = {}));
+//# sourceMappingURL=DetalleUsuarioViewModel.js.map

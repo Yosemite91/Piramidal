@@ -120,6 +120,7 @@ Namespace Controllers.APIControllers
                     .FechaTermino = model.FechaTermino
                     .Ubicacion = model.Ubicacion
                 End With
+
                 Await db.SaveChangesAsync()
             Catch ex As Exception
                 Return Me.Content(HttpStatusCode.BadRequest, "Problemas para guardar cambios")
