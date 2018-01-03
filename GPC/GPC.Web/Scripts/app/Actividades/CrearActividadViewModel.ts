@@ -159,7 +159,7 @@ namespace Actividades {
             }
         }
         public dxFechaInicio = {
-            min: new Date(2000, 1, 1),
+            min: new Date(1900, 1, 1),
             width: 'auto',
             type: "datetime",
             editorOptions: {
@@ -174,7 +174,7 @@ namespace Actividades {
             }
         }
         public dxFechaTermino = {
-            min: new Date(),
+            min: new Date(1900, 1, 1),
             width: 'auto',
             type: "datetime",
             editorOptions: {
@@ -217,9 +217,6 @@ namespace Actividades {
             onValueChanged: (e: any) => {
                 this.actividad().ubicacion = e.value;
             }
-            //onSelectionChanged: (e: any) => {
-            //    this.usuario().ubicacion = e.selectedItem;
-            //}
         }        
         
         public loading: KnockoutObservable<boolean> = ko.observable(false);

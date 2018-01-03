@@ -172,7 +172,8 @@ Namespace Controllers.APIControllers
                            .Select(Function(u) New CalendarioModel With {
                                                                .Text = u.Nombre,
                                                                .StartDate = u.FechaInicio,
-                                                               .EndDate = u.FechaTermino
+                                                               .EndDate = u.FechaTermino,
+                                                               .Description = u.Descripcion
                                                             }) _
                            .ToListAsync()
 
